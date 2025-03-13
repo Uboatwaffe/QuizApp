@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.quizapp.FirstFragment"
-        android:label="@string/first_fragment_label"
+        android:label="@string/Quiz_mainpage"
         tools:layout="@layout/fragment_first">
 
         <action
