@@ -33,6 +33,8 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_SecondFragment)
         );
 
+        binding.buttonClose.setOnClickListener(v -> getActivity().finish());
+
     }
 
     @Override
