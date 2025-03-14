@@ -45,4 +45,5 @@
     <string name="login_text">Login</string>
     <string name="return_text">Return</string>
     <string name="credits_text">Credits</string>
+    <string name="credits_label">Credits</string>
 </resources>

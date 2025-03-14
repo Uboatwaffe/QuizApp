@@ -7,11 +7,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-import com.example.quizapp.databinding.FragmentSecondBinding;
+import com.example.quizapp.databinding.FragmentCreditsBinding;
 
-public class SecondFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+public class CreditsFragment extends Fragment {
+
+    private FragmentCreditsBinding binding;
 
     @Override
     public View onCreateView(
@@ -19,7 +20,7 @@ public class SecondFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentCreditsBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
@@ -27,14 +28,9 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.button.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment)
-        );
-
-        binding.button2.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_creditsFragment)
+        binding.buttonReturn.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_creditsFragment_to_SecondFragment)
         );
     }
 
