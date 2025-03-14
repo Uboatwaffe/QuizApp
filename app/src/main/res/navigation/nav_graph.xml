@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.quizapp.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="@string/main_menu_title"
         tools:layout="@layout/fragment_second">
 
         <action
