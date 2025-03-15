@@ -48,6 +48,6 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.quizapp.ui.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/login_label"
         tools:layout="@layout/fragment_login" />
 </navigation>

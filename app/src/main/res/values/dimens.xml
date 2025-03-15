@@ -1,7 +1,7 @@
 <resources>
     <dimen name="fab_margin">48dp</dimen>
     <dimen name="top_margin">16dp</dimen>
-    <dimen name="font_size_welcome">30</dimen>
+    <dimen name="font_size_welcome">27sp</dimen>
     <dimen name="zero_margin">0dp</dimen>
     <dimen name="side_margin">8dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
@@ -9,4 +9,6 @@
     <dimen name="fragment_vertical_margin">16dp</dimen>
     <dimen name="standard_width">235dp</dimen>
     <dimen name="standard_height">55dp</dimen>
+    <dimen name="divider_width">330dp</dimen>
+    <dimen name="divider_height">3dp</dimen>
 </resources>

@@ -58,7 +58,7 @@
     <string name="attachment_title" translatable="false">Attachment Title</string>
     <string name="attachment_summary_on" translatable="false">Attachment Summary On</string>
     <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
+    <string name="prompt_email" translatable="false">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -69,6 +69,13 @@
     <string name="username_text">Username</string>
     <string name="or_text">OR</string>
     <string name="Sign_up_text">Sign up</string>
+    <string name="username_hints">username</string>
+    <string name="password_hints">password</string>
+    <string name="login_label">Login</string>
+    <string name="to_be_done">NaN</string>
+    <string name="database_link">Type the link to the database below</string>
+    <string name="password_database">Type the password to the database below</string>
+    <string name="type_here_text">Type here</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

@@ -4,29 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/material_dynamic_neutral80"
     tools:context=".ui.LoginFragment">
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/passowrdInput"
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/top_margin"
+        android:autofillHints="@string/password_hints"
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
+        android:textColorHint="@color/material_dynamic_neutral40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/usernameInput" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/usernameInput"
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/fab_margin"
+        android:autofillHints="@string/username_hints"
         android:ems="10"
         android:hint="@string/username_text"
         android:inputType="textEmailAddress"
+        android:textColorHint="@color/material_dynamic_neutral40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,10 +44,10 @@
         android:text="@string/login_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/passowrdInput" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/or_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin"
@@ -52,12 +57,12 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonLoginLogin" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin"
         android:text="@string/Sign_up_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/or_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

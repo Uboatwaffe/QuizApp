@@ -18,6 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/top_margin"
             android:text="@string/main_menu_what_to_do"
+            android:textAlignment="center"
+            android:textSize="@dimen/font_size_welcome"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
