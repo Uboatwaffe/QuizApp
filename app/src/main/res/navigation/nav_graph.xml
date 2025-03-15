@@ -37,4 +37,9 @@
             android:id="@+id/action_creditsFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.quizapp.settingsFragment"
+        android:label="@string/settings_label"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

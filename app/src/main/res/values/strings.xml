@@ -42,9 +42,23 @@
     <string name="Quiz_mainpage" translatable="false">Quiz</string>
     <string name="main_menu_what_to_do">What do you want to do?</string>
     <string name="main_menu_title">Main menu</string>
-    <string name="login_text" translatable="false">Login</string>
+    <string name="login_text">Login</string>
     <string name="return_text">Return</string>
     <string name="credits_text">Credits</string>
     <string name="credits_label">Credits</string>
     <string name="close_text">CLOSE</string>
+    <!-- Preference Titles -->
+    <string name="hello_blank_fragment" translatable="false">Hello Blank Fragment</string>
+    <string name="messages_header" translatable="false">Messages Header</string>
+    <string name="signature_title" translatable="false">Signature Title</string>
+    <string name="reply_title" translatable="false">Reply Title</string>
+    <string name="sync_header" translatable="false">Sync Header</string>
+    <string name="sync_title" translatable="false">Sync Title</string>
+    <string name="attachment_summary_off" translatable="false">Attachment Summary Off</string>
+    <string name="attachment_title" translatable="false">Attachment Title</string>
+    <string name="attachment_summary_on" translatable="false">Attachment Summary On</string>
+    <!-- Messages Preferences -->
+
+    <!-- Sync Preferences -->
+
 </resources>

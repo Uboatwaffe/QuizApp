@@ -39,8 +39,6 @@
         dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="welcome_welcome">Witamy w naszej aplikacji</string>
-    <string name="start_welcome" translatable="false">START</string>
-    <string name="Quiz_mainpage" translatable="false">Quiz</string>
     <string name="main_menu_what_to_do">Co chcesz zrobić?</string>
     <string name="main_menu_title">Menu główne</string>
     <string name="login_text" translatable="false">Zaloguj się</string>
