@@ -40,6 +40,6 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.quizapp.settingsFragment"
-        android:label="@string/settings_label"
+        android:label="@string/action_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>
