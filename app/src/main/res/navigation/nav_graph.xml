@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.quizapp.FirstFragment"
+        android:name="com.example.quizapp.ui.FirstFragment"
         android:label="@string/Quiz_mainpage"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.quizapp.SecondFragment"
+        android:name="com.example.quizapp.ui.SecondFragment"
         android:label="@string/main_menu_title"
         tools:layout="@layout/fragment_second">
 
@@ -27,10 +27,13 @@
         <action
             android:id="@+id/action_SecondFragment_to_creditsFragment"
             app:destination="@id/creditsFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/creditsFragment"
-        android:name="com.example.quizapp.CreditsFragment"
+        android:name="com.example.quizapp.ui.CreditsFragment"
         android:label="@string/credits_label"
         tools:layout="@layout/fragment_credits">
         <action
@@ -39,7 +42,12 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.quizapp.settingsFragment"
+        android:name="com.example.quizapp.ui.settingsFragment"
         android:label="@string/action_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.quizapp.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
 </navigation>
