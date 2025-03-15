@@ -16,8 +16,8 @@
     <option name="MODE" value="default_activity" />
     <option name="RESTORE_ENABLED" value="false" />
     <option name="RESTORE_FILE" value="" />
-    <option name="CLEAR_LOGCAT" value="true" />
-    <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+    <option name="CLEAR_LOGCAT" value="false" />
+    <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
     <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
     <option name="DEBUGGER_TYPE" value="Java" />
     <Java>

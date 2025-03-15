@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentLoginBinding;
 
 public class LoginFragment extends Fragment {
@@ -26,6 +28,9 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        binding.buttonSignup.setOnClickListener(v ->
+                NavHostFragment.findNavController(LoginFragment.this)
+                        .navigate(R.id.action_loginFragment_to_signUpFragment));
 
     }
 
