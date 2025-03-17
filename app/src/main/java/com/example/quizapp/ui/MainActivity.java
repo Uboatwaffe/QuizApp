@@ -18,7 +18,6 @@ import com.example.quizapp.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
 
     /**
      * Called when the activity is first created.
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Inflate the layout using View Binding
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.quizapp.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         // Set up the toolbar

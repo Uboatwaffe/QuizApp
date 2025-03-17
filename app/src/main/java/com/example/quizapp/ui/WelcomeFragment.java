@@ -10,6 +10,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentWelcomeBinding;
 
+import java.util.Objects;
+
 public class WelcomeFragment extends Fragment {
 
     private FragmentWelcomeBinding binding;
@@ -34,7 +36,10 @@ public class WelcomeFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_SecondFragment)
         );
 
-        binding.buttonClose.setOnClickListener(v -> getActivity().finish());
+        try {
+            binding.buttonClose.setOnClickListener(v -> Objects.requireNonNull(getActivity()).finish());
+        } catch (Exception ignore) {
+        }
 
     }
 
