@@ -9,7 +9,7 @@
         android:id="@+id/FirstFragment"
         android:name="com.example.quizapp.ui.WelcomeFragment"
         android:label="@string/Quiz_mainpage"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_welcome">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
@@ -19,7 +19,7 @@
         android:id="@+id/SecondFragment"
         android:name="com.example.quizapp.ui.MainMenuFragment"
         android:label="@string/main_menu_title"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_main_menu">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

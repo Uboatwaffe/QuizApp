@@ -8,11 +8,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
-import com.example.quizapp.databinding.FragmentSecondBinding;
+import com.example.quizapp.databinding.FragmentMainMenuBinding;
 
 public class MainMenuFragment extends Fragment {
 
-    private FragmentSecondBinding binding;
+    private FragmentMainMenuBinding binding;
 
     @Override
     public View onCreateView(
@@ -20,7 +20,7 @@ public class MainMenuFragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecondBinding.inflate(inflater, container, false);
+        binding = FragmentMainMenuBinding.inflate(inflater, container, false);
         return binding.getRoot();
 
     }
