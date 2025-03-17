@@ -10,7 +10,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentSecondBinding;
 
-public class SecondFragment extends Fragment {
+public class MainMenuFragment extends Fragment {
 
     private FragmentSecondBinding binding;
 
@@ -29,17 +29,17 @@ public class SecondFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.buttonReturnSecond.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
+                NavHostFragment.findNavController(MainMenuFragment.this)
                         .navigate(R.id.action_SecondFragment_to_FirstFragment)
         );
 
         binding.buttonCredits.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
+                NavHostFragment.findNavController(MainMenuFragment.this)
                         .navigate(R.id.action_SecondFragment_to_creditsFragment)
         );
 
         binding.buttonLogin.setOnClickListener(v ->
-                NavHostFragment.findNavController(SecondFragment.this)
+                NavHostFragment.findNavController(MainMenuFragment.this)
                         .navigate(R.id.action_SecondFragment_to_loginFragment)
         );
     }

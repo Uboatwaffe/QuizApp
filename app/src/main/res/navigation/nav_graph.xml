@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.quizapp.ui.FirstFragment"
+        android:name="com.example.quizapp.ui.WelcomeFragment"
         android:label="@string/Quiz_mainpage"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.quizapp.ui.SecondFragment"
+        android:name="com.example.quizapp.ui.MainMenuFragment"
         android:label="@string/main_menu_title"
         tools:layout="@layout/fragment_second">
 
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.quizapp.ui.settingsFragment"
+        android:name="com.example.quizapp.ui.SettingsFragment"
         android:label="@string/action_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment

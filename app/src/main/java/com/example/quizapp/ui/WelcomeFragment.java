@@ -10,7 +10,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentFirstBinding;
 
-public class FirstFragment extends Fragment {
+public class WelcomeFragment extends Fragment {
 
     private FragmentFirstBinding binding;
 
@@ -30,7 +30,7 @@ public class FirstFragment extends Fragment {
 
 
         binding.buttonStart.setOnClickListener(v ->
-                NavHostFragment.findNavController(FirstFragment.this)
+                NavHostFragment.findNavController(WelcomeFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment)
         );
 
