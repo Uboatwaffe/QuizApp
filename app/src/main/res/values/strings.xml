@@ -76,6 +76,16 @@
     <string name="database_link">Type the link to the database below</string>
     <string name="password_database">Type the password to the database below</string>
     <string name="type_here_text">Type here</string>
+    <string name="sign_up">Sign up form</string>
+    <string name="username_new">Type your username below</string>
+    <string name="password_new">Type your passowrd below</string>
+    <string name="password_repeat">Repeat your password</string>
+    <string name="agreee_to_all">I agree to everything this app does to my data</string>
+    <string name="save_text">Save</string>
+    <string name="sign_up_label">Sign up</string>
+    <string name="db_link_hint">Link to the database</string>
+    <string name="db_password_hint">Database password</string>
+    <string name="current_text">Current: www.github.com</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->
