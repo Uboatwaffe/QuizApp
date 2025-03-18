@@ -73,4 +73,6 @@
     <string name="db_password_hint">Hasło do bazy danych</string>
     <string name="current_text">Aktualnie: www.github.com</string>
     <string name="problem_info">Przepraszamy ale nasza aplikacja napotkała problem. Prosimy zrestartować aplikację i skontaktować się z działem klienta.</string>
+    <string name="db_username">Wpisz login do bazy danych</string>
+    <string name="username_hint">Login do bazy danych</string>
 </resources>
