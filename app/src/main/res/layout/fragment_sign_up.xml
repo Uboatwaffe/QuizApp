@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_neutral80"
-    tools:context=".ui.SignUpFragment">
+    tools:context=".ui.SignUpFragment"
+    tools:ignore="Overdraw">
 
     <TextView
         android:id="@+id/email_prompt"
@@ -22,6 +23,7 @@
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/top_margin"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/username_text"
         android:inputType="textEmailAddress"
@@ -32,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email_prompt" />
 
     <TextView
-        android:id="@+id/passowrd_prompt"
+        android:id="@+id/password_prompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -46,6 +48,7 @@
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/top_margin"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
@@ -53,7 +56,7 @@
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passowrd_prompt" />
+        app:layout_constraintTop_toBottomOf="@+id/password_prompt" />
 
     <TextView
         android:id="@+id/textView6"
@@ -70,6 +73,7 @@
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/top_margin"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/prompt_password"
         android:inputType="textPassword"
@@ -125,7 +129,6 @@
         app:layout_constraintTop_toBottomOf="@+id/password_second" />
 
     <TextView
-        android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin"

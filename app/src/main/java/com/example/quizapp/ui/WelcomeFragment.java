@@ -39,6 +39,8 @@ public class WelcomeFragment extends Fragment {
         try {
             binding.buttonClose.setOnClickListener(v -> Objects.requireNonNull(getActivity()).finish());
         } catch (Exception ignore) {
+            NavHostFragment.findNavController(WelcomeFragment.this)
+                    .navigate(R.id.problemFragment);
         }
 
     }

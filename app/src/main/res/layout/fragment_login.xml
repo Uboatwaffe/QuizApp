@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_neutral80"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.LoginFragment"
+    tools:ignore="Overdraw">
 
     <EditText
-        android:id="@+id/passowrdInput"
+        android:id="@+id/passwordInput"
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/top_margin"
@@ -48,7 +49,7 @@
         android:text="@string/login_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passowrdInput" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
 
     <TextView
         android:id="@+id/or_text"
