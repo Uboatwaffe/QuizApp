@@ -59,4 +59,18 @@
     <string name="username_hints">Nazwa użytkownika</string>
     <string name="password_hints">Hasło</string>
     <string name="login_label">Zaloguj się</string>
+    <string name="database_link">Wpisz link do bazy danych poniżej</string>
+    <string name="password_database">Wpisz hasło do bazy danych poniżej</string>
+    <string name="type_here_text">Pisz tutaj</string>
+    <string name="sign_up">Formularz zgłoszeniowy</string>
+    <string name="username_new">Wpisz twoją nazwę użytkownika poniżej</string>
+    <string name="password_new">Wpisz twoje hasło poniżej</string>
+    <string name="password_repeat">Powtórz swoje hasło</string>
+    <string name="agree_to_all">Wyrażam zgodę na przetwarzanie moich danych przez tą aplikację</string>
+    <string name="save_text">Zapisz</string>
+    <string name="sign_up_label">Zarejstruj się</string>
+    <string name="db_link_hint">Link do bazy danych</string>
+    <string name="db_password_hint">Hasło do bazy danych</string>
+    <string name="current_text">Aktualnie: www.github.com</string>
+    <string name="problem_info">Przepraszamy ale nasza aplikacja napotkała problem. Prosimy zrestartować aplikację i skontaktować się z działem klienta.</string>
 </resources>
