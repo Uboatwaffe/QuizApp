@@ -63,9 +63,12 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+        // Get the id of the item
         int id = item.getItemId();
 
 
+        // Navigating between fragments
         if (id == R.id.action_settings) {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
             navController.navigate(R.id.settingsFragment);
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
             navController.navigate(R.id.SecondFragment);
         }
 
+        // Return the super class
         return super.onOptionsItemSelected(item);
     }
 
@@ -83,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
      */
     @Override
     public boolean onSupportNavigateUp() {
+
+        // Navigate up to the parent node of the current destination
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
