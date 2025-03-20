@@ -67,6 +67,6 @@
     <fragment
         android:id="@+id/loggedInFragment"
         android:name="com.example.quizapp.ui.LoggedInFragment"
-        android:label="@string/loged_in_label"
+        android:label="@string/logged_in_label"
         tools:layout="@layout/fragment_logged_in" />
 </navigation>

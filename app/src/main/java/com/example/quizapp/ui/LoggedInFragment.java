@@ -51,10 +51,10 @@ public class LoggedInFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
-        binding.buttonLogOut.setOnClickListener(v -> {
+        binding.buttonLogOut.setOnClickListener(v ->
             NavHostFragment.findNavController(this)
-                    .navigate(R.id.mainMenuFragment);
-        });
+                    .navigate(R.id.mainMenuFragment)
+        );
 
     }
 

@@ -58,6 +58,7 @@ public class LoginFragment extends Fragment {
             boolean password_correct = true;
 
             // Checking whether user gave correct data
+            //noinspection ConstantValue
             if (password_correct) {
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_loginFragment_to_loggedInFragment);
