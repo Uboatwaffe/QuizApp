@@ -52,7 +52,7 @@ public class CreditsFragment extends Fragment {
         // Listeners
         binding.buttonReturn.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_creditsFragment_to_SecondFragment)
+                        .navigate(R.id.action_creditsFragment_to_mainMenuFragment)
         );
     }
 

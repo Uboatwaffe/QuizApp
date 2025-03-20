@@ -48,7 +48,9 @@ public class ProblemFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
-
+        binding.buttonUnderstood.setOnClickListener(v ->
+                System.exit(0)
+        );
     }
 
     /**

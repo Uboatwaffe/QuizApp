@@ -39,6 +39,15 @@
     <string name="problem_info">We are sorry to inform you but the program has run into some problems.\n\nPlease try restarting and contacing customer service.</string>
     <string name="db_username">Type the username to the database below</string>
     <string name="username_hint">Database username</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="loged_in_welcome">You are currently loged in as:</string>
+    <string name="start_last_quiz">Start last quiz</string>
+    <string name="log_out_text">Log out</string>
+    <string name="modify_sets_text">Change sets</string>
+    <string name="manage_questions_text">Manage questions</string>
+    <string name="manage_data">Managage data</string>
+    <string name="understood_text">Understood</string>
+    <string name="loged_in_label">User panel</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

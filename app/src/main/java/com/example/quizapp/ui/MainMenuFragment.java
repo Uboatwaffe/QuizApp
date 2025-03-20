@@ -54,17 +54,17 @@ public class MainMenuFragment extends Fragment {
         // Listeners
         binding.buttonReturnSecond.setOnClickListener(v ->
                 NavHostFragment.findNavController(MainMenuFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment)
+                        .navigate(R.id.action_mainMenuFragment_to_welcomeFragment)
         );
 
         binding.buttonCredits.setOnClickListener(v ->
                 NavHostFragment.findNavController(MainMenuFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_creditsFragment)
+                        .navigate(R.id.action_mainMenuFragment_to_creditsFragment)
         );
 
         binding.buttonLogin.setOnClickListener(v ->
                 NavHostFragment.findNavController(MainMenuFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_loginFragment)
+                        .navigate(R.id.action_mainMenuFragment_to_loginFragment)
         );
     }
 

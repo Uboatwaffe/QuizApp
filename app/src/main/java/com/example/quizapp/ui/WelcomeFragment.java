@@ -56,7 +56,7 @@ public class WelcomeFragment extends Fragment {
         // Listeners
         binding.buttonStart.setOnClickListener(v ->
                 NavHostFragment.findNavController(WelcomeFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment)
+                        .navigate(R.id.action_welcomeFragment_to_mainMenuFragment)
         );
 
         // Close the app (listener)

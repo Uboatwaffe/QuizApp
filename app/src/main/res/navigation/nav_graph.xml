@@ -2,33 +2,31 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/welcomeFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/welcomeFragment"
         android:name="com.example.quizapp.ui.WelcomeFragment"
         android:label="@string/Quiz_mainpage"
         tools:layout="@layout/fragment_welcome">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_welcomeFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/mainMenuFragment"
         android:name="com.example.quizapp.ui.MainMenuFragment"
         android:label="@string/main_menu_title"
         tools:layout="@layout/fragment_main_menu">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-        <action
-            android:id="@+id/action_SecondFragment_to_creditsFragment"
-            app:destination="@id/creditsFragment" />
-        <action
-            android:id="@+id/action_SecondFragment_to_loginFragment"
+            android:id="@+id/action_mainMenuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_creditsFragment"
+            app:destination="@id/creditsFragment" />
     </fragment>
     <fragment
         android:id="@+id/creditsFragment"
@@ -36,8 +34,8 @@
         android:label="@string/credits_label"
         tools:layout="@layout/fragment_credits">
         <action
-            android:id="@+id/action_creditsFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_creditsFragment_to_mainMenuFragment"
+            app:destination="@id/mainMenuFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -52,6 +50,9 @@
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loggedInFragment"
+            app:destination="@id/loggedInFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -63,4 +64,9 @@
         android:name="com.example.quizapp.error.ProblemFragment"
         android:label="fragment_problem"
         tools:layout="@layout/fragment_problem" />
+    <fragment
+        android:id="@+id/loggedInFragment"
+        android:name="com.example.quizapp.ui.LoggedInFragment"
+        android:label="@string/loged_in_label"
+        tools:layout="@layout/fragment_logged_in" />
 </navigation>

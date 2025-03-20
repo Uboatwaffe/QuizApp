@@ -22,7 +22,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/top_margin"
                 android:checked="false"
-                android:clickable="false"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

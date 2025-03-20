@@ -34,4 +34,12 @@
     <string name="problem_info">Przepraszamy ale nasza aplikacja napotkała problem. Prosimy zrestartować aplikację i skontaktować się z działem klienta.</string>
     <string name="db_username">Wpisz login do bazy danych</string>
     <string name="username_hint">Login do bazy danych</string>
+    <string name="loged_in_welcome">Jesteś zalogowany jako:</string>
+    <string name="start_last_quiz">Zacznij ostatni quiz</string>
+    <string name="log_out_text">Wyloguj się</string>
+    <string name="modify_sets_text">Zmień tabele</string>
+    <string name="manage_questions_text">Zarządzaj pytaniami</string>
+    <string name="manage_data">Zarządzaj danymi</string>
+    <string name="understood_text">Zrozumiano</string>
+    <string name="loged_in_label">Panel użytkownika</string>
 </resources>
