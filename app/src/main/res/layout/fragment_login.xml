@@ -70,4 +70,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/or_text" />
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/to_be_done"
+        android:textColor="@color/design_default_color_error"
+        android:textSize="@dimen/small_text_font_size"
+        app:layout_constraintBottom_toTopOf="@+id/buttonLoginLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>

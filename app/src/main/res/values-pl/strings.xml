@@ -42,4 +42,5 @@
     <string name="understood_text">Zrozumiano</string>
     <string name="logged_in_welcome">Jesteś zalogowany jako:</string>
     <string name="logged_in_label">Panel użytkownika</string>
+    <string name="invalid_username_or_password">Nieprawidłowe hasło lub login</string>
 </resources>

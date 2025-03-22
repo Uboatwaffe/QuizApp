@@ -10,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentLoginBinding;
 
+
 /**
  * This fragment is responsible for the login screen.
  */
@@ -48,6 +49,9 @@ public class LoginFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        // Setting the error text to invisible
+        binding.errorText.setVisibility(View.INVISIBLE);
+
         // Listeners
         binding.buttonSignup.setOnClickListener(v ->
                 NavHostFragment.findNavController(LoginFragment.this)
@@ -55,13 +59,24 @@ public class LoginFragment extends Fragment {
 
         binding.buttonLoginLogin.setOnClickListener(v -> {
             // TODO: implement user authentication
-            boolean password_correct = true;
 
-            // Checking whether user gave correct data
-            //noinspection ConstantValue
-            if (password_correct) {
+            // Getting the username and password from the input fields
+            String username = binding.usernameInput.getText().toString();
+            String password = binding.passwordInput.getText().toString();
+
+            // Checking whether user gave correct data (set to admin, admin)
+            if (authentication(username, password)) {
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_loginFragment_to_loggedInFragment);
+
+                // Clearing the input fields
+                binding.usernameInput.setText("");
+                binding.passwordInput.setText("");
+            }else{
+
+                // Showing the error text
+                binding.errorText.setText(R.string.invalid_username_or_password);
+                binding.errorText.setVisibility(View.VISIBLE);
             }
         });
 
@@ -78,4 +93,7 @@ public class LoginFragment extends Fragment {
         binding = null;
     }
 
+    boolean authentication(String username, String password) {
+        return username.equals("admin") && password.equals("admin");
+    }
 }
