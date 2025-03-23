@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
-import com.example.quizapp.databinding.FragmentCreditsBinding;
 import com.example.quizapp.databinding.FragmentDebugBinding;
 
 

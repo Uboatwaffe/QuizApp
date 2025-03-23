@@ -47,6 +47,7 @@ public class abcdQuestionFragment extends Fragment {
 
     }
 
+    /** @noinspection unused*/
     public void setParameters(String question, String optionA, String optionB, String optionC, String optionD, EnumOfABCD set_type) {
         // Set the text of the question and the options
         binding.questionText.setText(question);
