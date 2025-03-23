@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentDebugBinding;
-import com.example.quizapp.ui.questions.ClosedTypes;
-import com.example.quizapp.ui.questions.EnumOfABCD;
+
 
 
 /**

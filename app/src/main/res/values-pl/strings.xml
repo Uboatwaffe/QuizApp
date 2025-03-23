@@ -47,4 +47,6 @@
     <string name="question_label">Pytanie</string>
     <string name="question_single_text">To pytanie wymaga jednej odpowiedzi</string>
     <string name="question_multiple_text">To pytanie wymaga kilku odpowiedzi</string>
+    <string name="option_true">Prawda</string>
+    <string name="option_false">Fałsz</string>
 </resources>

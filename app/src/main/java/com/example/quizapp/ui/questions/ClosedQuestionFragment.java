@@ -152,6 +152,7 @@ public class ClosedQuestionFragment extends Fragment {
         });
         binding.buttonNextQuestion.setOnClickListener(v->{
             // TODO: Check if the answer is correct and if there are more questions
+            //noinspection ConstantValue
             if(true){
                 NextQuestion();
             }

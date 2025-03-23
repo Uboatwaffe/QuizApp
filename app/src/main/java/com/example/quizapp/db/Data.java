@@ -10,14 +10,14 @@ import com.example.quizapp.ui.questions.EnumOfABCD;
  * @version 0.1
  */
 public class Data {
-    public String question;
-    public String optionA;
-    public String optionB;
-    public String optionC;
-    public String optionD;
-    public String correctAnswer;
-    public ClosedTypes questionType;
-    public EnumOfABCD ABCDType;
+    public final String question;
+    public final String optionA;
+    public final String optionB;
+    public final String optionC;
+    public final String optionD;
+    public final String correctAnswer;
+    public final ClosedTypes questionType;
+    public final EnumOfABCD ABCDType;
 
     /**
      * Constructor
