@@ -158,6 +158,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="tfQuestionFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="301" />
+                            <option name="y" value="1047" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="welcomeFragment">
                     <value>
                       <LayoutPositions>

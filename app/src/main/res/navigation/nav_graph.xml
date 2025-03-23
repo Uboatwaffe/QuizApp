@@ -70,10 +70,10 @@
         android:label="@string/logged_in_label"
         tools:layout="@layout/fragment_logged_in" />
     <fragment
-        android:id="@+id/abcdQuestionFragment"
-        android:name="com.example.quizapp.ui.questions.abcdQuestionFragment"
+        android:id="@+id/closedQuestionFragment"
+        android:name="com.example.quizapp.ui.questions.ClosedQuestionFragment"
         android:label="@string/question_label"
-        tools:layout="@layout/fragment_abcd_question" />
+        tools:layout="@layout/fragment_closed_question" />
     <fragment
         android:id="@+id/debugFragment"
         android:name="com.example.quizapp.debug.DebugFragment"
