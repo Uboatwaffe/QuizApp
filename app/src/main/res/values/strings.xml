@@ -48,7 +48,6 @@
     <string name="logged_in_welcome">You are logged in as:</string>
     <string name="logged_in_label">User panel</string>
     <string name="invalid_username_or_password">Invalid username or password</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="next_text">Next</string>
     <string name="problem_label" translatable="false">Problem</string>
     <string name="question_label">Question</string>
