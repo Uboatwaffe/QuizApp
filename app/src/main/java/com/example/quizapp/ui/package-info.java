@@ -3,7 +3,9 @@
  * Package for user interface
  *
  * <ul>
+ *     <li> {@link com.example.quizapp.ui.questions} - sub-folder for question related ui</li>
  *     <li> {@link com.example.quizapp.ui.CreditsFragment} - class for the credits menu of the app </li>
+ *     <li> {@link com.example.quizapp.ui.LoggedInFragment} -class for the menu of logged user</li>
  *     <li> {@link com.example.quizapp.ui.LoginFragment} - class for the login menu of the app </li>
  *     <li> {@link com.example.quizapp.ui.MainActivity} - class for handling menu bar of the app</li>
  *     <li> {@link com.example.quizapp.ui.MainMenuFragment} - class for the main menu of the app </li>

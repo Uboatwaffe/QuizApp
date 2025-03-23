@@ -11,4 +11,8 @@
         android:id="@+id/action_menu"
         android:orderInCategory="101"
         android:title="@string/main_menu_title" />
+    <item
+        android:id="@+id/action_debug"
+        android:orderInCategory="102"
+        android:title="Testing(to be removed)" />
 </menu>

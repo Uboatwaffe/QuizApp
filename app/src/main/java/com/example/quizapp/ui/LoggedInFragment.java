@@ -12,7 +12,7 @@ import com.example.quizapp.databinding.FragmentLoggedInBinding;
 
 
 /**
- * This fragment is used to display the credits of the app.
+ * This fragment is used to display the menu for logged-in users.
  */
 public class LoggedInFragment extends Fragment {
 

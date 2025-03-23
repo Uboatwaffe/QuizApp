@@ -62,11 +62,21 @@
     <fragment
         android:id="@+id/problemFragment"
         android:name="com.example.quizapp.error.ProblemFragment"
-        android:label="fragment_problem"
+        android:label="@string/problem_label"
         tools:layout="@layout/fragment_problem" />
     <fragment
         android:id="@+id/loggedInFragment"
         android:name="com.example.quizapp.ui.LoggedInFragment"
         android:label="@string/logged_in_label"
         tools:layout="@layout/fragment_logged_in" />
+    <fragment
+        android:id="@+id/abcdQuestionFragment"
+        android:name="com.example.quizapp.ui.questions.abcdQuestionFragment"
+        android:label="@string/question_label"
+        tools:layout="@layout/fragment_abcd_question" />
+    <fragment
+        android:id="@+id/debugFragment"
+        android:name="com.example.quizapp.debug.DebugFragment"
+        android:label="fragment_debug"
+        tools:layout="@layout/fragment_debug" />
 </navigation>

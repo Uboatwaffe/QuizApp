@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_menu) {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
             navController.navigate(R.id.mainMenuFragment);
+        } else if(id == R.id.action_debug) {
+            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+            navController.navigate(R.id.debugFragment);
         }
 
         // Return the super class
