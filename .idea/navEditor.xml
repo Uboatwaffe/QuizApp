@@ -8,13 +8,13 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="abcdQuestionFragment">
+                  <entry key="closedQuestionFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="96" />
-                            <option name="y" value="1053" />
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -153,18 +153,6 @@
                           <Point>
                             <option name="x" value="744" />
                             <option name="y" value="368" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="tfQuestionFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="301" />
-                            <option name="y" value="1047" />
                           </Point>
                         </option>
                       </LayoutPositions>
