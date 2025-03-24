@@ -60,6 +60,11 @@ public class DebugFragment extends Fragment {
                     NavHostFragment.findNavController(this)
                             .navigate(R.id.closedQuestionFragment)
         );
+
+        binding.buttonDate.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.dateQuestionFragment)
+        );
     }
 
     /**

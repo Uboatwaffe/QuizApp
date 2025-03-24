@@ -79,4 +79,9 @@
         android:name="com.example.quizapp.debug.DebugFragment"
         android:label="fragment_debug"
         tools:layout="@layout/fragment_debug" />
+    <fragment
+        android:id="@+id/dateQuestionFragment"
+        android:name="com.example.quizapp.ui.questions.DateQuestionFragment"
+        android:label="@string/question_label"
+        tools:layout="@layout/fragment_date_question" />
 </navigation>

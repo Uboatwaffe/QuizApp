@@ -44,7 +44,6 @@
         app:layout_constraintTop_toBottomOf="@+id/last_set_text" />
 
     <Button
-        android:id="@+id/button_log_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
@@ -54,7 +53,6 @@
         app:layout_constraintTop_toBottomOf="@+id/button_modify_questions" />
 
     <Button
-        android:id="@+id/button_modify_sets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/medium_margin"

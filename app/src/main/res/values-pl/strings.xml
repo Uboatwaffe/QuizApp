@@ -49,4 +49,11 @@
     <string name="question_multiple_text">To pytanie wymaga kilku odpowiedzi</string>
     <string name="option_true">Prawda</string>
     <string name="option_false">Fałsz</string>
+    <string name="date_info">Wszystkie daty powinny być w formacie DD.MM.RRRR</string>
+    <string name="dd_text">DD</string>
+    <string name="mm_text">MM</string>
+    <string name="day_text">Dzień</string>
+    <string name="month_text">Miesiąc</string>
+    <string name="year_text">Rok</string>
+    <string name="yyyy_text">RRRR</string>
 </resources>

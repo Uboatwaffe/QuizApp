@@ -53,9 +53,15 @@
     <string name="question_label">Question</string>
     <string name="question_single_text">This question requires single answer</string>
     <string name="question_multiple_text">This question requires multiple answers</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="option_true">True</string>
     <string name="option_false">False</string>
+    <string name="day_text">Day</string>
+    <string name="month_text">Month</string>
+    <string name="year_text">Year</string>
+    <string name="date_info">All dates should be type in DD.MM.YYYY format</string>
+    <string name="dd_text">DD</string>
+    <string name="mm_text">MM</string>
+    <string name="yyyy_text">YYYY</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

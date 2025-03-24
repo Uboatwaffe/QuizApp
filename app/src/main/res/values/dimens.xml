@@ -13,4 +13,5 @@
     <dimen name="small_margin">3dp</dimen>
     <dimen name="medium_margin">32dp</dimen>
     <dimen name="small_text_font_size">20sp</dimen>
+    <dimen name="small_width">100dp</dimen>
 </resources>
