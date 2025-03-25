@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.example.quizapp.databinding.FragmentOpenQuestionBinding;
+import com.example.quizapp.db.Storage;
 
 
 /**
@@ -35,6 +36,8 @@ public class OpenQuestionFragment extends Fragment {
 
         // Inflate the layout for this fragment
         binding = FragmentOpenQuestionBinding.inflate(inflater, container, false);
+
+        setParameters(Storage.question, Storage.correctAnswer);
         return binding.getRoot();
 
     }
@@ -48,6 +51,13 @@ public class OpenQuestionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
+
+    }
+
+    private void setParameters(String question, String correctAns) {
+
+        // Set the text of the question and the options
+        binding.openQuestionText.setText(question);
 
     }
 

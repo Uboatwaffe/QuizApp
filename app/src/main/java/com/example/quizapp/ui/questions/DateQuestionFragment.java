@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.example.quizapp.databinding.FragmentDateQuestionBinding;
+import com.example.quizapp.db.Storage;
 
 
 /**
@@ -35,6 +36,9 @@ public class DateQuestionFragment extends Fragment {
 
         // Inflate the layout for this fragment
         binding = FragmentDateQuestionBinding.inflate(inflater, container, false);
+
+        setParameters(Storage.question, Storage.correctAnswer);
+
         return binding.getRoot();
 
     }
@@ -48,6 +52,13 @@ public class DateQuestionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
+
+    }
+
+    private void setParameters(String question, String correctAns) {
+
+        // Set the text of the question and the options
+        binding.questionTextDate.setText(question);
 
     }
 

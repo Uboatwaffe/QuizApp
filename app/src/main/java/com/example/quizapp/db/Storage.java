@@ -33,4 +33,6 @@ public class Storage {
         Storage.questionType = questionType_new;
     }
 
+    //TODO: After this is used make the fragment call this again to update the question, after question is answered check if the next question is of the same type if yes then proceed if no then navigate to the correct fragment
+
 }

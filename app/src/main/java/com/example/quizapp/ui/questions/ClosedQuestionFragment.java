@@ -80,7 +80,7 @@ public class ClosedQuestionFragment extends Fragment {
      * @param ABCD_type_new     the abcd type new (single or multiple)
      * @noinspection unused
      */
-    public void setParameters(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, ClosedTypes question_type_new, EnumOfABCD ABCD_type_new) {
+    private void setParameters(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, ClosedTypes question_type_new, EnumOfABCD ABCD_type_new) {
         ABCD_type = ABCD_type_new;
         question_type = question_type_new;
 
@@ -183,7 +183,7 @@ public class ClosedQuestionFragment extends Fragment {
                 data = new Data(ClosedTypes.TRUE_FALSE, EnumOfABCD.SINGLE, QuestionType.CLOSED);
                 break;
             case 3:
-                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.OPEN);
+                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.DATE);
                 break;
             default:
                 data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.NONE);
