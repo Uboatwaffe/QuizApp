@@ -11,6 +11,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentClosedQuestionBinding;
 import com.example.quizapp.db.Data;
+import com.example.quizapp.db.Storage;
 
 
 /**
@@ -173,23 +174,37 @@ public class ClosedQuestionFragment extends Fragment {
 
         switch (i){
             case 0:
-                data = new Data(ClosedTypes.ABCD, EnumOfABCD.SINGLE);
+                data = new Data(ClosedTypes.ABCD, EnumOfABCD.SINGLE, QuestionType.CLOSED);
                 break;
             case 1:
-                data = new Data(ClosedTypes.ABCD, EnumOfABCD.MULTIPLE);
+                data = new Data(ClosedTypes.ABCD, EnumOfABCD.MULTIPLE, QuestionType.CLOSED);
                 break;
             case 2:
-                data = new Data(ClosedTypes.TRUE_FALSE, EnumOfABCD.SINGLE);
+                data = new Data(ClosedTypes.TRUE_FALSE, EnumOfABCD.SINGLE, QuestionType.CLOSED);
+                break;
+            case 3:
+                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.OPEN);
                 break;
             default:
-                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE);
+                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.NONE);
                 break;
         }
 
-        i = (i + 1) % 3;
+        i = (i + 1) % 4;
 
-        // Set the parameters of the question
-        setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.questionType, data.ABCDType);
+
+        if (data.questionType == QuestionType.CLOSED) {
+            // Set the parameters of the question
+            setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType);
+        } else if (data.questionType == QuestionType.OPEN) {
+            Storage.setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.openQuestionFragment);
+        } else if (data.questionType == QuestionType.DATE) {
+            Storage.setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.dateQuestionFragment);
+        }
 
         // Uncheck all checkboxes
         for (CheckBox checkBox : checkBoxes){
