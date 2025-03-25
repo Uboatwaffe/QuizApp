@@ -11,12 +11,12 @@ import com.example.quizapp.ui.questions.QuestionType;
  * @version 0.1
  */
 public class Storage {
-    public static String question = "";
-    public static String optionA = "";
-    public static String optionB = "";
-    public static String optionC = "";
-    public static String optionD = "";
-    public static String correctAnswer = "";
+    public static String question = null;
+    public static String optionA = null;
+    public static String optionB = null;
+    public static String optionC = null;
+    public static String optionD = null;
+    public static String correctAnswer = null;
     public static ClosedTypes closedType = ClosedTypes.NONE;
     public static EnumOfABCD ABCDType = EnumOfABCD.NONE;
     public static QuestionType questionType = QuestionType.NONE;
