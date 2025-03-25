@@ -56,4 +56,6 @@
     <string name="month_text">Miesiąc</string>
     <string name="year_text">Rok</string>
     <string name="yyyy_text">RRRR</string>
+    <string name="open_info_text">Spróbuj odpowiedzieć jak najdokładniej</string>
+    <string name="type_here_text">Pisz tutaj</string>
 </resources>

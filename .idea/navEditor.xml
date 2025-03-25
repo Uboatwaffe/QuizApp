@@ -134,6 +134,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="openQuestionFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="462" />
+                            <option name="y" value="1083" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="problemFragment">
                     <value>
                       <LayoutPositions>

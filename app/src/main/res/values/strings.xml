@@ -62,6 +62,9 @@
     <string name="dd_text">DD</string>
     <string name="mm_text">MM</string>
     <string name="yyyy_text">YYYY</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="open_info_text">Try to answer as specific as possible</string>
+    <string name="type_here_text">Type here</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

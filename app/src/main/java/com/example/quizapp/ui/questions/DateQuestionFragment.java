@@ -10,7 +10,7 @@ import com.example.quizapp.databinding.FragmentDateQuestionBinding;
 
 
 /**
- * This fragment is used to display the credits of the app.
+ * This fragment is used to display the date question.
  */
 public class DateQuestionFragment extends Fragment {
 

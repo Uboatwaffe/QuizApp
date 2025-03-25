@@ -84,4 +84,9 @@
         android:name="com.example.quizapp.ui.questions.DateQuestionFragment"
         android:label="@string/question_label"
         tools:layout="@layout/fragment_date_question" />
+    <fragment
+        android:id="@+id/openQuestionFragment"
+        android:name="com.example.quizapp.ui.questions.OpenQuestionFragment"
+        android:label="@string/question_label"
+        tools:layout="@layout/fragment_open_question" />
 </navigation>

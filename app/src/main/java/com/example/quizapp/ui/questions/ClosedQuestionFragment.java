@@ -14,7 +14,7 @@ import com.example.quizapp.db.Data;
 
 
 /**
- * This fragment is used to display questions with multiple choice answers.
+ * This fragment is used to display questions with single/multiple/true or false choice answers.
  */
 public class ClosedQuestionFragment extends Fragment {
 
