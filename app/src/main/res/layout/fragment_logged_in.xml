@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/material_dynamic_neutral80"
-    tools:context=".ui.LoggedInFragment"
+    tools:context=".ui.logged_in.LoggedInFragment"
     tools:ignore="Overdraw">
 
     <TextView
@@ -54,6 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button_modify_questions" />
 
     <Button
+        android:id="@+id/button_change_sets"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/medium_margin"

@@ -66,9 +66,13 @@
         tools:layout="@layout/fragment_problem" />
     <fragment
         android:id="@+id/loggedInFragment"
-        android:name="com.example.quizapp.ui.LoggedInFragment"
+        android:name="com.example.quizapp.ui.logged_in.LoggedInFragment"
         android:label="@string/logged_in_label"
-        tools:layout="@layout/fragment_logged_in" />
+        tools:layout="@layout/fragment_logged_in" >
+        <action
+            android:id="@+id/action_loggedInFragment_to_changeSetsFragment"
+            app:destination="@id/changeSetsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/closedQuestionFragment"
         android:name="com.example.quizapp.ui.questions.ClosedQuestionFragment"
@@ -89,4 +93,9 @@
         android:name="com.example.quizapp.ui.questions.OpenQuestionFragment"
         android:label="@string/question_label"
         tools:layout="@layout/fragment_open_question" />
+    <fragment
+        android:id="@+id/changeSetsFragment"
+        android:name="com.example.quizapp.ui.logged_in.ChangeSetsFragment"
+        android:label="fragment_change_sets"
+        tools:layout="@layout/fragment_change_sets" />
 </navigation>
