@@ -58,4 +58,7 @@
     <string name="yyyy_text">RRRR</string>
     <string name="open_info_text">Spróbuj odpowiedzieć jak najdokładniej</string>
     <string name="type_here_text">Pisz tutaj</string>
+    <string name="available_sets">Dostępne zestawy</string>
+    <string name="refresh_text">Odśwież</string>
+    <string name="change_sets_label">Zmieań zestaw</string>
 </resources>

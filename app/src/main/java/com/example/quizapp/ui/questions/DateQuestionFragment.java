@@ -21,6 +21,11 @@ public class DateQuestionFragment extends Fragment {
     private FragmentDateQuestionBinding binding;
 
     /**
+     * The answer to the question.
+     */
+    private String answer;
+
+    /**
      * This method is called when the fragment is created.
      *
      * @param inflater           The layout inflater.
@@ -55,11 +60,17 @@ public class DateQuestionFragment extends Fragment {
 
     }
 
+    /**
+     * This method is called when the view is created.
+     * @param question The question to be displayed.
+     * @param correctAns The correct answer to the question.
+     */
     private void setParameters(String question, String correctAns) {
 
         // Set the text of the question and the options
         binding.questionTextDate.setText(question);
 
+        answer = correctAns;
     }
 
     /**

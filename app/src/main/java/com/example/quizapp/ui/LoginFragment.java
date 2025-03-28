@@ -93,6 +93,13 @@ public class LoginFragment extends Fragment {
         binding = null;
     }
 
+    /**
+     * This method is used to authenticate the user.
+     *
+     * @param username The username of the user.
+     * @param password The password of the user.
+     * @return True if the user is authenticated, false otherwise.
+     */
     boolean authentication(String username, String password) {
         return username.equals("admin") && password.equals("admin");
     }

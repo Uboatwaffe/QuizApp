@@ -96,6 +96,6 @@
     <fragment
         android:id="@+id/changeSetsFragment"
         android:name="com.example.quizapp.ui.logged_in.ChangeSetsFragment"
-        android:label="fragment_change_sets"
+        android:label="@string/change_sets_label"
         tools:layout="@layout/fragment_change_sets" />
 </navigation>

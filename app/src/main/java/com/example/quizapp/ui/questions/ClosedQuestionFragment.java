@@ -166,6 +166,9 @@ public class ClosedQuestionFragment extends Fragment {
      */
     private int i = 0;
 
+    /**
+     * This method is used to get the next question from the database.
+     */
     private void NextQuestion(){
         // TODO: Get the next question from the database
 
@@ -197,11 +200,11 @@ public class ClosedQuestionFragment extends Fragment {
             // Set the parameters of the question
             setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType);
         } else if (data.questionType == QuestionType.OPEN) {
-            Storage.setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
+            Storage.setParameters(data.question, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
             NavHostFragment.findNavController(this)
                     .navigate(R.id.openQuestionFragment);
         } else if (data.questionType == QuestionType.DATE) {
-            Storage.setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
+            Storage.setParameters(data.question, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
             NavHostFragment.findNavController(this)
                     .navigate(R.id.dateQuestionFragment);
         }

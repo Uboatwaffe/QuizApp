@@ -21,12 +21,26 @@ public class Storage {
     public static EnumOfABCD ABCDType = EnumOfABCD.NONE;
     public static QuestionType questionType = QuestionType.NONE;
 
+    /**
+     * Function to set parameters
+     */
     public static void setParameters(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, ClosedTypes closedType, EnumOfABCD ABCD_type_new, QuestionType questionType_new){
         Storage.question = question;
         Storage.optionA = optionA;
         Storage.optionB = optionB;
         Storage.optionC = optionC;
         Storage.optionD = optionD;
+        Storage.correctAnswer = correctAns;
+        Storage.closedType = closedType;
+        Storage.ABCDType = ABCD_type_new;
+        Storage.questionType = questionType_new;
+    }
+
+    /**
+     * Function to set parameters
+     */
+    public static void setParameters(String question, String correctAns, ClosedTypes closedType, EnumOfABCD ABCD_type_new, QuestionType questionType_new){
+        Storage.question = question;
         Storage.correctAnswer = correctAns;
         Storage.closedType = closedType;
         Storage.ABCDType = ABCD_type_new;

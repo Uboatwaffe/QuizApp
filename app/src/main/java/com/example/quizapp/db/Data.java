@@ -4,6 +4,8 @@ import com.example.quizapp.ui.questions.ClosedTypes;
 import com.example.quizapp.ui.questions.EnumOfABCD;
 import com.example.quizapp.ui.questions.QuestionType;
 
+import java.util.List;
+
 /**
  * <p>Created on 23.03.2025</p>
  * Class for storing data (to be replaced by proper class)
@@ -21,6 +23,11 @@ public class Data {
     public final EnumOfABCD ABCDType;
     public final QuestionType questionType;
 
+    public static final List<String> setsList = List.of(
+            "Default set 1",
+            "Default set 2"
+    );
+
     /**
      * Constructor
      */
@@ -35,6 +42,7 @@ public class Data {
         this.ABCDType = ABCDType;
         this.questionType = questionType;
     }
+
 
 
 }

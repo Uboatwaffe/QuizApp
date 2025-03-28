@@ -21,6 +21,11 @@ public class OpenQuestionFragment extends Fragment {
     private FragmentOpenQuestionBinding binding;
 
     /**
+     * Answer to the question.
+     */
+    private String answer;
+
+    /**
      * This method is called when the fragment is created.
      *
      * @param inflater           The layout inflater.
@@ -54,11 +59,18 @@ public class OpenQuestionFragment extends Fragment {
 
     }
 
+    /**
+     * This method is used to set the parameters of the question.
+     *
+     * @param question   The question to be displayed.
+     * @param correctAns The correct answer to the question.
+     */
     private void setParameters(String question, String correctAns) {
 
         // Set the text of the question and the options
         binding.openQuestionText.setText(question);
 
+        answer = correctAns;
     }
 
     /**

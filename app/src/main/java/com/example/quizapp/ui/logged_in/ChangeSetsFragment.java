@@ -4,13 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentChangeSetsBinding;
-import com.example.quizapp.databinding.FragmentCreditsBinding;
+import com.example.quizapp.db.Data;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * This fragment is used to display available sets of questions
@@ -21,6 +23,16 @@ public class ChangeSetsFragment extends Fragment {
      * The binding object for the fragment.
      */
     private FragmentChangeSetsBinding binding;
+
+    /**
+     * The adapter for the spinner.
+     */
+    private ArrayAdapter<String> adapter;
+
+    /**
+     * The list of sets.
+     */
+    private List<String> setsList;
 
     /**
      * This method is called when the fragment is created.
@@ -35,11 +47,26 @@ public class ChangeSetsFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         // Inflate the layout for this fragment
         binding = FragmentChangeSetsBinding.inflate(inflater, container, false);
-        return binding.getRoot();
 
+        // Initialize the list
+        setsList = new ArrayList<>(Data.setsList);
+
+        // Initialize the spinner
+        adapter = new ArrayAdapter<>(
+                getContext(),
+                android.R.layout.simple_spinner_item,
+                setsList
+        );
+
+        // Set the layout for the spinner
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Set the adapter for the spinner
+        binding.sets.setAdapter(adapter);
+
+        return binding.getRoot();
     }
 
     /**
@@ -51,7 +78,26 @@ public class ChangeSetsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
+        binding.buttonRefresh.setOnClickListener(v -> {
+            // Update the spinner data
+            updateSpinnerData("Set1", "Set2", "Set3", "Set4", "Set5");
+        });
+    }
 
+    /**
+     * Method to update the spinner data.
+     *
+     * @param db The new data to be displayed in the spinner.
+     */
+    private void updateSpinnerData(String ... db) {
+        // Clear the current list
+        setsList.clear();
+
+        // Add the new data to the list
+        setsList.addAll(Arrays.asList(db));
+
+        // Notify the adapter that the data has changed
+        adapter.notifyDataSetChanged();
     }
 
     /**
@@ -59,10 +105,8 @@ public class ChangeSetsFragment extends Fragment {
      */
     @Override
     public void onDestroyView() {
-
         // Set the binding to null
         super.onDestroyView();
         binding = null;
     }
-
 }
