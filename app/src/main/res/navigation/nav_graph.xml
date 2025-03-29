@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_loggedInFragment_to_changeSetsFragment"
             app:destination="@id/changeSetsFragment" />
+        <action
+            android:id="@+id/action_loggedInFragment_to_manageQuestionsFragment"
+            app:destination="@id/manageQuestionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/closedQuestionFragment"
@@ -97,5 +100,18 @@
         android:id="@+id/changeSetsFragment"
         android:name="com.example.quizapp.ui.logged_in.ChangeSetsFragment"
         android:label="@string/change_sets_label"
-        tools:layout="@layout/fragment_change_sets" />
+        tools:layout="@layout/fragment_change_sets" >
+        <action
+            android:id="@+id/action_changeSetsFragment_to_loggedInFragment"
+            app:destination="@id/loggedInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageQuestionsFragment"
+        android:name="com.example.quizapp.ui.logged_in.ManageQuestionsFragment"
+        android:label="@string/manage_questions_label"
+        tools:layout="@layout/fragment_manage_questions" >
+        <action
+            android:id="@+id/action_manageQuestionsFragment_to_loggedInFragment"
+            app:destination="@id/loggedInFragment" />
+    </fragment>
 </navigation>

@@ -13,8 +13,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="1061" />
-                            <option name="y" value="722" />
+                            <option name="x" value="1083" />
+                            <option name="y" value="491" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -86,6 +86,15 @@
                             <option name="y" value="724" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_loggedInFragment_to_changeSetsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -142,6 +151,18 @@
                               </value>
                             </entry>
                           </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="manageQuestionsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1101" />
+                            <option name="y" value="869" />
+                          </Point>
                         </option>
                       </LayoutPositions>
                     </value>

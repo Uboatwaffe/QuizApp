@@ -28,6 +28,13 @@ public class Data {
             "Default set 2"
     );
 
+    public static final List<String> questionList = List.of(
+            "question 1",
+            "question 2",
+            "question 3",
+            "question 4"
+    );
+
     /**
      * Constructor
      */
