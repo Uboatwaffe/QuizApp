@@ -113,5 +113,18 @@
         <action
             android:id="@+id/action_manageQuestionsFragment_to_loggedInFragment"
             app:destination="@id/loggedInFragment" />
+        <action
+            android:id="@+id/action_manageQuestionsFragment_to_editQuestionFragment"
+            app:destination="@id/editQuestionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editQuestionFragment"
+        android:name="com.example.quizapp.ui.logged_in.EditQuestionFragment"
+        android:label="@string/edit_question_label"
+        tools:layout="@layout/fragment_edit_question" >
+        <argument
+            android:name="question_id"
+            app:argType="integer"
+            android:defaultValue="-1" />
     </fragment>
 </navigation>

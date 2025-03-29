@@ -17,6 +17,15 @@
                             <option name="y" value="491" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_changeSetsFragment_to_loggedInFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -77,6 +86,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="editQuestionFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1391" />
+                            <option name="y" value="849" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="loggedInFragment">
                     <value>
                       <LayoutPositions>
@@ -89,6 +110,11 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_loggedInFragment_to_changeSetsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_loggedInFragment_to_manageQuestionsFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -160,9 +186,23 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="1101" />
-                            <option name="y" value="869" />
+                            <option name="x" value="1085" />
+                            <option name="y" value="849" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_manageQuestionsFragment_to_editQuestionFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_manageQuestionsFragment_to_loggedInFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>

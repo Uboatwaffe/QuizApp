@@ -35,7 +35,7 @@
         android:layout_marginTop="@dimen/fab_margin"
         android:text="@string/edit_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/buffer"
+        app:layout_constraintStart_toEndOf="@+id/button_add"
         app:layout_constraintTop_toBottomOf="@+id/spinner_questions" />
 
     <Button
@@ -44,16 +44,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fab_margin"
         android:text="@string/return_text"
-        app:layout_constraintEnd_toStartOf="@+id/buffer"
+        app:layout_constraintEnd_toStartOf="@+id/button_add"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_questions" />
 
-    <TextView
-        android:id="@+id/buffer"
+    <Button
+        android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_questions"
-        tools:visibility="invisible" />
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="@string/add_text"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_questions"
+        app:layout_constraintStart_toStartOf="@+id/spinner_questions"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_questions" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -86,6 +86,10 @@ public class ManageQuestionsFragment extends Fragment {
         binding.buttonExit.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.action_manageQuestionsFragment_to_loggedInFragment));
+
+        binding.buttonAdd.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment));
     }
 
     /**

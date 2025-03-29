@@ -72,6 +72,8 @@
     <string name="manage_questions_label">Manage questions</string>
     <string name="edit_text">Edit</string>
     <string name="manage_prompt_text">Choose question to modify and click edit button</string>
+    <string name="edit_question_label">Edit question</string>
+    <string name="add_text">Add</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->
