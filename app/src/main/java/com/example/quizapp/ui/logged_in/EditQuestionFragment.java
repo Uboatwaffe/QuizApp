@@ -27,11 +27,6 @@ public class EditQuestionFragment extends Fragment {
 
 
     /**
-     * The adapter for the spinner.
-     */
-    private ArrayAdapter<String> adapter;
-
-    /**
      * This method is called when the fragment is created.
      *
      * @param inflater           The layout inflater.
@@ -57,7 +52,7 @@ public class EditQuestionFragment extends Fragment {
 
 
         // Initialize the spinner
-        adapter = new ArrayAdapter<>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
                 questionTypeList

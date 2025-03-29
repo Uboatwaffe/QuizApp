@@ -13,7 +13,6 @@ import com.example.quizapp.databinding.FragmentManageQuestionsBinding;
 import com.example.quizapp.db.Data;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -26,16 +25,6 @@ public class ManageQuestionsFragment extends Fragment {
      * The binding object for the fragment.
      */
     private FragmentManageQuestionsBinding binding;
-
-    /**
-     * The adapter for the spinner.
-     */
-    private ArrayAdapter<String> adapter;
-
-    /**
-     * The list of sets.
-     */
-    private List<String> setsList;
 
     /**
      * This method is called when the fragment is created.
@@ -55,10 +44,10 @@ public class ManageQuestionsFragment extends Fragment {
         binding = FragmentManageQuestionsBinding.inflate(inflater, container, false);
 
         // Initialize the list
-        setsList = new ArrayList<>(Data.questionList);
+        List<String> setsList = new ArrayList<>(Data.questionList);
 
         // Initialize the spinner
-        adapter = new ArrayAdapter<>(
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
                 setsList
@@ -90,22 +79,6 @@ public class ManageQuestionsFragment extends Fragment {
         binding.buttonAdd.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment));
-    }
-
-    /**
-     * Method to update the spinner data.
-     *
-     * @param db The new data to be displayed in the spinner.
-     */
-    private void updateSpinnerData(String ... db) {
-        // Clear the current list
-        setsList.clear();
-
-        // Add the new data to the list
-        setsList.addAll(Arrays.asList(db));
-
-        // Notify the adapter that the data has changed
-        adapter.notifyDataSetChanged();
     }
 
     /**

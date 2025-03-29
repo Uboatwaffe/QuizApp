@@ -12,6 +12,7 @@ import com.example.quizapp.db.Storage;
 
 /**
  * This fragment is used to display the date question.
+ * @noinspection FieldCanBeLocal
  */
 public class DateQuestionFragment extends Fragment {
 

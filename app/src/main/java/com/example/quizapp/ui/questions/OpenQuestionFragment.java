@@ -12,6 +12,7 @@ import com.example.quizapp.db.Storage;
 
 /**
  * This fragment is used to display open questions.
+ * @noinspection FieldCanBeLocal
  */
 public class OpenQuestionFragment extends Fragment {
 

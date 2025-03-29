@@ -67,15 +67,13 @@
     <string name="available_sets">All available sets</string>
     <string name="refresh_text">Refresh</string>
     <string name="change_sets_label">Change sets</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="manage_questions_label">Manage questions</string>
     <string name="edit_text">Edit</string>
     <string name="manage_prompt_text">Choose question to modify and click edit button</string>
     <string name="edit_question_label">Edit question</string>
     <string name="add_text">Add</string>
     <string name="current_question">Question</string>
-    <string name="answear_text">Answer</string>
+    <string name="answer_text">Answer</string>
     <string name="type_of_question">Type of question</string>
     <string name="tf_or_normal">T/F or ABCD</string>
     <string name="tf_text">T/F</string>

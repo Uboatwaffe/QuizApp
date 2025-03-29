@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/top_margin"
-                android:text="@string/answear_text"
+                android:text="@string/answer_text"
                 android:textSize="@dimen/small_text_font_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,24 +52,27 @@
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginTop="@dimen/top_margin"
+                android:autofillHints=""
                 android:ems="10"
                 android:inputType="text"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/question_current_text" />
+                app:layout_constraintTop_toBottomOf="@+id/question_current_text"
+                tools:ignore="LabelFor" />
 
             <EditText
                 android:id="@+id/edit_answer"
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginTop="@dimen/top_margin"
-                android:ems="10"
+                android:autofillHints="" android:ems="10"
                 android:inputType="text"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/answer_current_text" />
+                app:layout_constraintTop_toBottomOf="@+id/answer_current_text"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/type_of_question_text_edit"
@@ -202,12 +205,13 @@
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginTop="@dimen/top_margin"
-                android:ems="10"
+                android:autofillHints="" android:ems="10"
                 android:inputType="text"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/option_A_text" />
+                app:layout_constraintTop_toBottomOf="@+id/option_A_text"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/option_B_text"
@@ -224,12 +228,13 @@
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginTop="@dimen/top_margin"
-                android:ems="10"
+                android:autofillHints="" android:ems="10"
                 android:inputType="text"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/option_B_text" />
+                app:layout_constraintTop_toBottomOf="@+id/option_B_text"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/option_C_text"
@@ -246,12 +251,13 @@
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginTop="@dimen/top_margin"
-                android:ems="10"
+                android:autofillHints="" android:ems="10"
                 android:inputType="text"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/option_C_text" />
+                app:layout_constraintTop_toBottomOf="@+id/option_C_text"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/option_D_text"
@@ -268,12 +274,13 @@
                 android:layout_width="@dimen/standard_width"
                 android:layout_height="@dimen/standard_height"
                 android:layout_marginTop="@dimen/top_margin"
-                android:ems="10"
+                android:autofillHints="" android:ems="10"
                 android:inputType="text"
                 android:text="@string/to_be_done"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/option_D_text" />
+                app:layout_constraintTop_toBottomOf="@+id/option_D_text"
+                tools:ignore="LabelFor" />
 
             <TextView
                 android:id="@+id/buffer"

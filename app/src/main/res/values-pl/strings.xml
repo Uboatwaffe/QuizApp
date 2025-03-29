@@ -61,4 +61,27 @@
     <string name="available_sets">Dostępne zestawy</string>
     <string name="refresh_text">Odśwież</string>
     <string name="change_sets_label">Zmieań zestaw</string>
+    <string name="manage_questions_label">Zarządzanie pytaniami</string>
+    <string name="edit_text">Edytuj</string>
+    <string name="manage_prompt_text">Wybierz pytanie do modyfikacji i klinij edytuj</string>
+    <string name="edit_question_label">Edytuj pytanie</string>
+    <string name="add_text">Dodaj</string>
+    <string name="current_question">Pytanie</string>
+    <string name="answer_text">Odpowiedź</string>
+    <string name="type_of_question">Typ pytania</string>
+    <string name="tf_or_normal">P/F lub ABCD</string>
+    <string name="tf_text">P/F</string>
+    <string name="abcd_text">ABCD</string>
+    <string name="single_or_multiple">Odpowiedź pojedyncza lub kilkukrotna</string>
+    <string name="single_text">Pojedyncza</string>
+    <string name="multiple_text">Kilkukrotna</string>
+    <string name="options_text">Opcje</string>
+    <string name="option_a">Opcja A</string>
+    <string name="option_b">Opcja B</string>
+    <string name="option_c">Opcja C</string>
+    <string name="option_d">Opcja D</string>
+    <string name="delete_text">Usuń</string>
+    <string name="open_question">Pytanie otwarte</string>
+    <string name="closed_question">Pytanie zamknięte</string>
+    <string name="date_question">Pytanie o date</string>
 </resources>
