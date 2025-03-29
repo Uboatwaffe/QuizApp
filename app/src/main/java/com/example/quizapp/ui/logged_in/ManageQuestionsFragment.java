@@ -76,9 +76,12 @@ public class ManageQuestionsFragment extends Fragment {
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.action_manageQuestionsFragment_to_loggedInFragment));
 
-        binding.buttonAdd.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment));
+        binding.buttonAdd.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putInt("question_id", 123); // Replace 123 with the actual question ID
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment, bundle);
+        });
     }
 
     /**

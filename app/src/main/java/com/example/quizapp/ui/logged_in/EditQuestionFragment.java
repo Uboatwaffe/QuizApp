@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentEditQuestionBinding;
 
@@ -66,6 +67,14 @@ public class EditQuestionFragment extends Fragment {
 
         // Set correct visibility for the checkboxes and text
         Set();
+
+        // Getting arguments from the previous fragment
+        int questionId = getArguments() != null ? getArguments().getInt("question_id") : -1;
+
+        // Setting the question as text in the edit text (currently id is shown)
+        //TODO: Get the question from the database and set it as text
+        binding.editQuestion.setText(String.valueOf(questionId));
+
 
         return binding.getRoot();
 
