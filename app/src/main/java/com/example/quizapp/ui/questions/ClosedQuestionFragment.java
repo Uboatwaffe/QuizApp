@@ -37,7 +37,7 @@ public class ClosedQuestionFragment extends Fragment {
     /**
      * Array of checkboxes. (not initialized yet)
      */
-    private CheckBox[] checkBoxes = new CheckBox[4];
+    private CheckBox[] checkBoxes;
 
 
     /**

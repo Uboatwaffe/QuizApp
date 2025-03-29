@@ -74,6 +74,24 @@
     <string name="manage_prompt_text">Choose question to modify and click edit button</string>
     <string name="edit_question_label">Edit question</string>
     <string name="add_text">Add</string>
+    <string name="current_question">Question</string>
+    <string name="answear_text">Answer</string>
+    <string name="type_of_question">Type of question</string>
+    <string name="tf_or_normal">T/F or ABCD</string>
+    <string name="tf_text">T/F</string>
+    <string name="abcd_text">ABCD</string>
+    <string name="single_or_multiple">Single answer or multiple</string>
+    <string name="single_text">Single</string>
+    <string name="multiple_text">Multiple</string>
+    <string name="options_text">Options</string>
+    <string name="option_a">Option A</string>
+    <string name="option_b">Option B</string>
+    <string name="option_c">Option C</string>
+    <string name="option_d">Option D</string>
+    <string name="delete_text">Delete</string>
+    <string name="open_question">Open question</string>
+    <string name="closed_question">Closed question</string>
+    <string name="date_question">Date question</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->
