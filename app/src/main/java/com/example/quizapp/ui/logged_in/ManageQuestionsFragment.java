@@ -78,7 +78,15 @@ public class ManageQuestionsFragment extends Fragment {
 
         binding.buttonAdd.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
+            bundle.putString("action", "add");
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment, bundle);
+        });
+
+        binding.buttonEdit.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
             bundle.putInt("question_id", 123); // Replace 123 with the actual question ID
+            bundle.putString("action", "edit");
             NavHostFragment.findNavController(this)
                     .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment, bundle);
         });

@@ -46,6 +46,7 @@ public class EditQuestionFragment extends Fragment {
 
         // Initialize the questionTypeList
         List<String> questionTypeList = List.of(
+                getString(R.string.select_question_type),
                 getString(R.string.open_question),
                 getString(R.string.closed_question),
                 getString(R.string.date_question)
@@ -65,15 +66,22 @@ public class EditQuestionFragment extends Fragment {
         // Set the adapter for the spinner
         binding.spinnerTypeOfQuestion.setAdapter(adapter);
 
-        // Set correct visibility for the checkboxes and text
-        Set();
+
 
         // Getting arguments from the previous fragment
         int questionId = getArguments() != null ? getArguments().getInt("question_id") : -1;
+        String action = getArguments() != null ? getArguments().getString("action") : null;
 
         // Setting the question as text in the edit text (currently id is shown)
-        //TODO: Get the question from the database and set it as text
-        binding.editQuestion.setText(String.valueOf(questionId));
+        //TODO: Get the question from the database and set it as text (and additional data)
+
+        if (action.equals("add")) {
+            binding.editQuestion.setText(R.string.type_here_text);
+            HideAbcd();
+        }else{
+            binding.editQuestion.setText(String.valueOf(questionId));
+
+        }
 
 
         return binding.getRoot();
@@ -128,7 +136,9 @@ public class EditQuestionFragment extends Fragment {
         String selectedQuestionType = binding.spinnerTypeOfQuestion.getSelectedItem().toString();
 
         // Check if the question type is closed
-        if (selectedQuestionType.equals(getString(R.string.closed_question))) {
+        if(selectedQuestionType.equals(getString(R.string.select_question_type))){
+            ShowAbcd();
+        }else if (selectedQuestionType.equals(getString(R.string.closed_question))) {
             binding.checkBoxAbcd.setVisibility(View.VISIBLE);
             binding.checkBoxTf.setVisibility(View.VISIBLE);
             binding.closedTypeText.setVisibility(View.VISIBLE);

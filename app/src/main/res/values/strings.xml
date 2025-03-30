@@ -23,7 +23,7 @@
     <string name="username_hints">username</string>
     <string name="password_hints">password</string>
     <string name="login_label">Login</string>
-    <string name="to_be_done" translatable="false">NaN</string>
+    <string name="to_be_done" translatable="false">N/A</string>
     <string name="database_link">Type the link to the database below</string>
     <string name="password_database">Type the password to the database below</string>
     <string name="sign_up">Sign up form</string>
@@ -90,6 +90,7 @@
     <string name="open_question">Open question</string>
     <string name="closed_question">Closed question</string>
     <string name="date_question">Date question</string>
+    <string name="select_question_type">Select the question type</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

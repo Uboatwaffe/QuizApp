@@ -35,7 +35,7 @@
         android:layout_marginTop="@dimen/fab_margin"
         android:text="@string/refresh_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_save"
+        app:layout_constraintStart_toEndOf="@+id/buffer3"
         app:layout_constraintTop_toBottomOf="@+id/sets" />
 
     <Button
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fab_margin"
         android:text="@string/return_text"
-        app:layout_constraintEnd_toStartOf="@+id/button_save"
+        app:layout_constraintEnd_toStartOf="@+id/buffer3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sets" />
 
@@ -52,10 +52,29 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/top_margin"
         android:text="@string/save_text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sets" />
+        app:layout_constraintEnd_toEndOf="@+id/button_refresh"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintStart_toStartOf="@+id/button_refresh"
+        app:layout_constraintTop_toBottomOf="@+id/button_refresh" />
+
+    <TextView
+        android:id="@+id/buffer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/sets"
+        app:layout_constraintStart_toStartOf="@+id/sets"
+        app:layout_constraintTop_toBottomOf="@+id/sets"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/button_delete_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin"
+        android:text="@string/delete_text"
+        app:layout_constraintEnd_toEndOf="@+id/button_return"
+        app:layout_constraintStart_toStartOf="@+id/button_return"
+        app:layout_constraintTop_toBottomOf="@+id/button_return" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -63,7 +63,12 @@
         android:id="@+id/problemFragment"
         android:name="com.example.quizapp.error.ProblemFragment"
         android:label="@string/problem_label"
-        tools:layout="@layout/fragment_problem" />
+        tools:layout="@layout/fragment_problem" >
+        <argument
+            android:name="problem_description"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
     <fragment
         android:id="@+id/loggedInFragment"
         android:name="com.example.quizapp.ui.logged_in.LoggedInFragment"
@@ -126,5 +131,9 @@
             android:name="question_id"
             app:argType="integer"
             android:defaultValue="-1" />
+        <argument
+            android:name="action"
+            app:argType="string"
+            android:defaultValue="add" />
     </fragment>
 </navigation>
