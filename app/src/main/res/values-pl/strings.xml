@@ -60,7 +60,6 @@
     <string name="type_here_text">Pisz tutaj</string>
     <string name="available_sets">Dostępne zestawy</string>
     <string name="refresh_text">Odśwież</string>
-    <string name="change_sets_label">Zmieań zestaw</string>
     <string name="manage_questions_label">Zarządzanie pytaniami</string>
     <string name="edit_text">Edytuj</string>
     <string name="manage_prompt_text">Wybierz pytanie do modyfikacji i klinij edytuj</string>

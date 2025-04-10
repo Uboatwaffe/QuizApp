@@ -8,7 +8,7 @@
     tools:context=".ui.logged_in.ManageDataFragment" >
 
     <EditText
-        android:id="@+id/username_input2"
+        android:id="@+id/password_input"
         android:layout_width="@dimen/standard_width"
         android:layout_height="@dimen/standard_height"
         android:layout_marginTop="@dimen/top_margin"
@@ -19,7 +19,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/password_text"
+        tools:ignore="Autofill,LabelFor" />
 
     <TextView
         android:id="@+id/info_text_data"
@@ -33,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/username_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/medium_margin"
@@ -53,10 +54,11 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        app:layout_constraintTop_toBottomOf="@+id/email_text"
+        tools:ignore="Autofill,LabelFor" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/email_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin"
@@ -76,10 +78,11 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/username_text"
+        tools:ignore="Autofill,LabelFor" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/top_margin"
@@ -99,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buffer4" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button_save_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/fab_margin"
@@ -114,6 +117,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/username_input2"
+        app:layout_constraintTop_toBottomOf="@+id/password_input"
         tools:visibility="invisible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

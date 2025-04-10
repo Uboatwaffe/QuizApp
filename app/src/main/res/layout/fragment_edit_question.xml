@@ -148,7 +148,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/single_or_multiple_text" />
 
             <Button
-                android:id="@+id/button_save_edit"
+                android:id="@+id/button_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/side_margin"
@@ -170,8 +170,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/buffer2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView28"
-                 />
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
             <TextView
                 android:id="@+id/options_text"

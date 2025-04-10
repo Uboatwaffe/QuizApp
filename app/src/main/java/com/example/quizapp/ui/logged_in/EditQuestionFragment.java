@@ -75,6 +75,7 @@ public class EditQuestionFragment extends Fragment {
         // Setting the question as text in the edit text (currently id is shown)
         //TODO: Get the question from the database and set it as text (and additional data)
 
+        assert action != null;
         if (action.equals("add")) {
             binding.editQuestion.setText(R.string.type_here_text);
             HideAbcd();
