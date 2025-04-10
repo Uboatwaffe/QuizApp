@@ -67,6 +67,11 @@ public class LoggedInFragment extends Fragment {
                     .navigate(R.id.manageQuestionsFragment)
         );
 
+        binding.buttonModifyData.setOnClickListener(v ->
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.manageDataFragment)
+        );
+
     }
 
     /**

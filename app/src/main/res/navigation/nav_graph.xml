@@ -138,6 +138,9 @@
             android:name="action"
             app:argType="string"
             android:defaultValue="add" />
+        <action
+            android:id="@+id/action_editQuestionFragment_to_manageQuestionsFragment"
+            app:destination="@id/manageQuestionsFragment" />
     </fragment>
     <fragment
         android:id="@+id/manageDataFragment"
@@ -148,5 +151,8 @@
             android:name="user_id"
             android:defaultValue="-1"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_manageDataFragment_to_loggedInFragment"
+            app:destination="@id/loggedInFragment" />
     </fragment>
 </navigation>

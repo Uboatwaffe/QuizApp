@@ -117,6 +117,11 @@ public class EditQuestionFragment extends Fragment {
             Update(binding.checkBoxMultiple);
         });
 
+        binding.buttonDelete.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_editQuestionFragment_to_manageQuestionsFragment)
+        );
+
         binding.spinnerTypeOfQuestion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

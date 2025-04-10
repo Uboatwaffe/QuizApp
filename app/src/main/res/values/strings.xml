@@ -91,7 +91,6 @@
     <string name="closed_question">Closed question</string>
     <string name="date_question">Date question</string>
     <string name="select_question_type">Select the question type</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="manage_data_label">Manage data</string>
     <string name="all_ur_data_text">Here\'s all your data</string>
     <string name="scratch_text">Scratch</string>

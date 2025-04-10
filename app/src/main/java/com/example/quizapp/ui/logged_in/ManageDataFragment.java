@@ -1,63 +1,71 @@
 package com.example.quizapp.ui.logged_in;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
+import com.example.quizapp.databinding.FragmentCreditsBinding;
+import com.example.quizapp.databinding.FragmentManageDataBinding;
+
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link ManageDataFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * This fragment is used to manage data of the user.
  */
 public class ManageDataFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    /**
+     * The binding object for the fragment.
+     */
+    private FragmentManageDataBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    /**
+     * This method is called when the fragment is created.
+     *
+     * @param inflater           The layout inflater.
+     * @param container          The view group container.
+     * @param savedInstanceState The saved instance state.
+     * @return The view of the fragment.
+     */
+    @Override
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState
+    ) {
 
-    public ManageDataFragment() {
-        // Required empty public constructor
+        // Inflate the layout for this fragment
+        binding = FragmentManageDataBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ManageDataFragment.
+     * This method is called when the view is created.
+     * @param view The view of the fragment.
+     * @param savedInstanceState The saved instance state.
      */
-    // TODO: Rename and change types and number of parameters
-    public static ManageDataFragment newInstance(String param1, String param2) {
-        ManageDataFragment fragment = new ManageDataFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Listeners
+        binding.buttonScratch.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_manageDataFragment_to_loggedInFragment)
+        );
     }
 
+    /**
+     * This method is called when the view is destroyed.
+     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public void onDestroyView() {
+
+        // Set the binding to null
+        super.onDestroyView();
+        binding = null;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_manage_data, container, false);
-    }
 }

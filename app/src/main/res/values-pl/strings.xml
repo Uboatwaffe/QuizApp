@@ -84,4 +84,11 @@
     <string name="open_question">Pytanie otwarte</string>
     <string name="closed_question">Pytanie zamknięte</string>
     <string name="date_question">Pytanie o date</string>
+    <string name="select_question_type">Wybierz typ pytania</string>
+    <string name="manage_data_label">Zarządzaj danymi</string>
+    <string name="all_ur_data_text">Tutaj są twoje wszystkie dane</string>
+    <string name="scratch_text">Zapomnij</string>
+    <string name="your_username">Twoja nazwa</string>
+    <string name="your_password">Twoje hasło</string>
+    <string name="your_email">Twój email</string>
 </resources>

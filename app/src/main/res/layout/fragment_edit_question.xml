@@ -151,23 +151,27 @@
                 android:id="@+id/button_save_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/fab_margin"
                 android:text="@string/save_text"
-                app:layout_constraintEnd_toEndOf="@+id/buffer2"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/buffer2"
                 app:layout_constraintTop_toBottomOf="@+id/textView28" />
 
             <Button
                 android:id="@+id/button_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/medium_margin"
-                android:layout_marginBottom="@dimen/huge_margin"
+                android:layout_marginTop="@dimen/side_margin"
+                android:layout_marginEnd="@dimen/side_margin"
+                android:layout_marginBottom="@dimen/fab_margin"
                 android:text="@string/delete_text"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/buffer2"
-                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                app:layout_constraintEnd_toStartOf="@+id/buffer2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView28"
+                 />
 
             <TextView
                 android:id="@+id/options_text"
