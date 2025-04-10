@@ -8,27 +8,6 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="changeSetsFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="1083" />
-                            <option name="y" value="491" />
-                          </Point>
-                        </option>
-                        <option name="myPositions">
-                          <map>
-                            <entry key="action_changeSetsFragment_to_loggedInFragment">
-                              <value>
-                                <LayoutPositions />
-                              </value>
-                            </entry>
-                          </map>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
                   <entry key="closedQuestionFragment">
                     <value>
                       <LayoutPositions>
@@ -114,6 +93,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_loggedInFragment_to_manageDataFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_loggedInFragment_to_manageQuestionsFragment">
                               <value>
                                 <LayoutPositions />
@@ -181,6 +165,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="manageDataFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="878" />
+                            <option name="y" value="1143" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="manageQuestionsFragment">
                     <value>
                       <LayoutPositions>
@@ -198,6 +194,27 @@
                               </value>
                             </entry>
                             <entry key="action_manageQuestionsFragment_to_loggedInFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="manageSetsFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="1053" />
+                            <option name="y" value="487" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_changeSetsFragment_to_loggedInFragment">
                               <value>
                                 <LayoutPositions />
                               </value>

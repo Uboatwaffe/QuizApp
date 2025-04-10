@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -15,7 +16,6 @@ import com.example.quizapp.db.Data;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  * This fragment is used to manage questions.
  */
@@ -25,6 +25,11 @@ public class ManageQuestionsFragment extends Fragment {
      * The binding object for the fragment.
      */
     private FragmentManageQuestionsBinding binding;
+
+    /**
+     * The selected question.
+     */
+    private String selectedQuestion;
 
     /**
      * This method is called when the fragment is created.
@@ -83,12 +88,26 @@ public class ManageQuestionsFragment extends Fragment {
                     .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment, bundle);
         });
 
+        binding.spinnerQuestions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedQuestion = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                selectedQuestion = null;
+            }
+        });
+
         binding.buttonEdit.setOnClickListener(v -> {
-            Bundle bundle = new Bundle();
-            bundle.putInt("question_id", 123); // Replace 123 with the actual question ID
-            bundle.putString("action", "edit");
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment, bundle);
+            if (selectedQuestion != null) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("question_id", Integer.parseInt(selectedQuestion));
+                bundle.putString("action", "edit");
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_manageQuestionsFragment_to_editQuestionFragment, bundle);
+            }
         });
     }
 

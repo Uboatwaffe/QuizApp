@@ -41,7 +41,7 @@
     <string name="username_hint">Database username</string>
     <string name="start_last_quiz">Start last quiz</string>
     <string name="log_out_text">Log out</string>
-    <string name="modify_sets_text">Change sets</string>
+    <string name="modify_sets_text">Manage sets</string>
     <string name="manage_questions_text">Manage questions</string>
     <string name="manage_data">Manage data</string>
     <string name="understood_text">Understood</string>
@@ -91,6 +91,13 @@
     <string name="closed_question">Closed question</string>
     <string name="date_question">Date question</string>
     <string name="select_question_type">Select the question type</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="manage_data_label">Manage data</string>
+    <string name="all_ur_data_text">Here\'s all your data</string>
+    <string name="scratch_text">Scratch</string>
+    <string name="your_username">Your username</string>
+    <string name="your_password">Your password</string>
+    <string name="your_email">Your email</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

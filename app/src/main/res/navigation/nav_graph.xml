@@ -76,10 +76,13 @@
         tools:layout="@layout/fragment_logged_in" >
         <action
             android:id="@+id/action_loggedInFragment_to_changeSetsFragment"
-            app:destination="@id/changeSetsFragment" />
+            app:destination="@id/manageSetsFragment" />
         <action
             android:id="@+id/action_loggedInFragment_to_manageQuestionsFragment"
             app:destination="@id/manageQuestionsFragment" />
+        <action
+            android:id="@+id/action_loggedInFragment_to_manageDataFragment"
+            app:destination="@id/manageDataFragment" />
     </fragment>
     <fragment
         android:id="@+id/closedQuestionFragment"
@@ -102,10 +105,10 @@
         android:label="@string/question_label"
         tools:layout="@layout/fragment_open_question" />
     <fragment
-        android:id="@+id/changeSetsFragment"
-        android:name="com.example.quizapp.ui.logged_in.ChangeSetsFragment"
-        android:label="@string/change_sets_label"
-        tools:layout="@layout/fragment_change_sets" >
+        android:id="@+id/manageSetsFragment"
+        android:name="com.example.quizapp.ui.logged_in.ManageSetsFragment"
+        android:label="@string/modify_sets_text"
+        tools:layout="@layout/fragment_change_sets">
         <action
             android:id="@+id/action_changeSetsFragment_to_loggedInFragment"
             app:destination="@id/loggedInFragment" />
@@ -135,5 +138,15 @@
             android:name="action"
             app:argType="string"
             android:defaultValue="add" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageDataFragment"
+        android:name="com.example.quizapp.ui.logged_in.ManageDataFragment"
+        android:label="@string/manage_data_label"
+        tools:layout="@layout/fragment_manage_data">
+        <argument
+            android:name="user_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
     </fragment>
 </navigation>

@@ -59,7 +59,7 @@ public class LoggedInFragment extends Fragment {
 
         binding.buttonChangeSets.setOnClickListener(v ->
             NavHostFragment.findNavController(this)
-                    .navigate(R.id.changeSetsFragment)
+                    .navigate(R.id.manageSetsFragment)
         );
 
         binding.buttonModifyQuestions.setOnClickListener(v ->

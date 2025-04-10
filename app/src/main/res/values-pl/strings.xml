@@ -36,7 +36,7 @@
     <string name="username_hint">Login do bazy danych</string>
     <string name="start_last_quiz">Zacznij ostatni quiz</string>
     <string name="log_out_text">Wyloguj się</string>
-    <string name="modify_sets_text">Zmień tabele</string>
+    <string name="modify_sets_text">Zarządzaj tabele</string>
     <string name="manage_questions_text">Zarządzaj pytaniami</string>
     <string name="manage_data">Zarządzaj danymi</string>
     <string name="understood_text">Zrozumiano</string>
