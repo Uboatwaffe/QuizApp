@@ -1,1 +1,1 @@
-Readme to bo completed with relese
+Readme to be completed with release
