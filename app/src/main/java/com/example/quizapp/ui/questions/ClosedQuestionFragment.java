@@ -200,11 +200,13 @@ public class ClosedQuestionFragment extends Fragment {
             // Set the parameters of the question
             setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType);
         } else if (data.questionType == QuestionType.OPEN) {
-            Storage.setParameters(data.question, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
+            new Storage.Builder(data.question, data.correctAnswer, data.questionType).build();
+
             NavHostFragment.findNavController(this)
                     .navigate(R.id.openQuestionFragment);
         } else if (data.questionType == QuestionType.DATE) {
-            Storage.setParameters(data.question, data.correctAnswer, data.closedType, data.ABCDType, data.questionType);
+            new Storage.Builder(data.question, data.correctAnswer, data.questionType).build();
+
             NavHostFragment.findNavController(this)
                     .navigate(R.id.dateQuestionFragment);
         }

@@ -21,30 +21,69 @@ public class Storage {
     public static EnumOfABCD ABCDType = EnumOfABCD.NONE;
     public static QuestionType questionType = QuestionType.NONE;
 
-    /**
-     * Function to set parameters
-     */
-    public static void setParameters(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, ClosedTypes closedType, EnumOfABCD ABCD_type_new, QuestionType questionType_new){
-        Storage.question = question;
-        Storage.optionA = optionA;
-        Storage.optionB = optionB;
-        Storage.optionC = optionC;
-        Storage.optionD = optionD;
-        Storage.correctAnswer = correctAns;
-        Storage.closedType = closedType;
-        Storage.ABCDType = ABCD_type_new;
-        Storage.questionType = questionType_new;
-    }
+    public static class Builder{
+        // Question parameters
+        private final String question;
+        private final String correctAnswer;
+        private final QuestionType questionType;
 
-    /**
-     * Function to set parameters
-     */
-    public static void setParameters(String question, String correctAns, ClosedTypes closedType, EnumOfABCD ABCD_type_new, QuestionType questionType_new){
-        Storage.question = question;
-        Storage.correctAnswer = correctAns;
-        Storage.closedType = closedType;
-        Storage.ABCDType = ABCD_type_new;
-        Storage.questionType = questionType_new;
+        // Options for closed questions
+        private String optionA = null;
+        private String optionB = null;
+        private String optionC = null;
+        private String optionD = null;
+        private ClosedTypes closedType = ClosedTypes.NONE;
+        private EnumOfABCD ABCDType = EnumOfABCD.NONE;
+
+
+        public Builder(String question, String correctAnswer, QuestionType questionType) {
+            this.question = question;
+            this.correctAnswer = correctAnswer;
+            this.questionType = questionType;
+        }
+
+        public Builder setOptionA(String optionA) {
+            this.optionA = optionA;
+            return this;
+        }
+
+        public Builder setOptionB(String optionB) {
+            this.optionB = optionB;
+            return this;
+        }
+
+        public Builder setOptionC(String optionC) {
+            this.optionC = optionC;
+            return this;
+        }
+
+        public Builder setOptionD(String optionD) {
+            this.optionD = optionD;
+            return this;
+        }
+
+        public Builder setClosedType(ClosedTypes closedType) {
+            this.closedType = closedType;
+            return this;
+        }
+
+        public Builder setABCDType(EnumOfABCD ABCDType) {
+            this.ABCDType = ABCDType;
+            return this;
+        }
+
+        public void build() {
+            Storage.question = this.question;
+            Storage.correctAnswer = this.correctAnswer;
+            Storage.questionType = this.questionType;
+            Storage.optionA = this.optionA;
+            Storage.optionB = this.optionB;
+            Storage.optionC = this.optionC;
+            Storage.optionD = this.optionD;
+            Storage.closedType = this.closedType;
+            Storage.ABCDType = this.ABCDType;
+        }
+
     }
 
     //TODO: After this is used make the fragment call this again to update the question, after question is answered check if the next question is of the same type if yes then proceed if no then navigate to the correct fragment
