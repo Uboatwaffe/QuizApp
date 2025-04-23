@@ -1,5 +1,6 @@
 package com.example.quizapp.db;
 
+import com.example.quizapp.error.exception.DataLoadingException;
 import com.example.quizapp.ui.questions.ClosedTypes;
 import com.example.quizapp.ui.questions.EnumOfABCD;
 import com.example.quizapp.ui.questions.QuestionType;
@@ -84,6 +85,22 @@ public class Storage {
             Storage.ABCDType = this.ABCDType;
         }
 
+    }
+
+    public static void setNew(){
+        if(Data.update()){
+            Storage.question = Data.getQuestion();
+            Storage.optionA = Data.getOptionA();
+            Storage.optionB = Data.getOptionB();
+            Storage.optionC = Data.getOptionC();
+            Storage.optionD = Data.getOptionD();
+            Storage.correctAnswer = Data.getCorrectAnswer();
+            Storage.questionType = Data.getQuestionType();
+            Storage.closedType = Data.getClosedType();
+            Storage.ABCDType = Data.getABCDType();
+        }else{
+            throw new DataLoadingException("No more questions");
+        }
     }
 
     //TODO: After this is used make the fragment call this again to update the question, after question is answered check if the next question is of the same type if yes then proceed if no then navigate to the correct fragment

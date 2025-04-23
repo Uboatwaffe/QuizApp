@@ -60,7 +60,15 @@ public class ClosedQuestionFragment extends Fragment {
         // Get the checkboxes (used by the Update method)
         checkBoxes = new CheckBox[]{binding.checkBoxA, binding.checkBoxB, binding.checkBoxC, binding.checkBoxD};
 
-        // Loads the next question (first in this case)
+        // Get the arguments from the bundle
+        Bundle args = getArguments();
+        boolean first = args.getBoolean("first");
+
+
+        if(first){
+            Storage.setNew();
+        }
+
         NextQuestion();
 
         return binding.getRoot();
@@ -155,6 +163,7 @@ public class ClosedQuestionFragment extends Fragment {
             // TODO: Check if the answer is correct and if there are more questions
             //noinspection ConstantValue
             if(true){
+                Storage.setNew();
                 NextQuestion();
             }
         });
@@ -162,50 +171,21 @@ public class ClosedQuestionFragment extends Fragment {
     }
 
     /**
-     * This is only for testing purposes.
-     */
-    private int i = 0;
-
-    /**
      * This method is used to get the next question from the database.
      */
     private void NextQuestion(){
-        // TODO: Get the next question from the database
-
-        // This is only for testing purposes (cycles through the questions)
-        Data data;
-
-        switch (i){
-            case 0:
-                data = new Data(ClosedTypes.ABCD, EnumOfABCD.SINGLE, QuestionType.CLOSED);
-                break;
-            case 1:
-                data = new Data(ClosedTypes.ABCD, EnumOfABCD.MULTIPLE, QuestionType.CLOSED);
-                break;
-            case 2:
-                data = new Data(ClosedTypes.TRUE_FALSE, EnumOfABCD.SINGLE, QuestionType.CLOSED);
-                break;
-            case 3:
-                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.DATE);
-                break;
-            default:
-                data = new Data(ClosedTypes.NONE, EnumOfABCD.NONE, QuestionType.NONE);
-                break;
-        }
-
-        i = (i + 1) % 4;
 
 
-        if (data.questionType == QuestionType.CLOSED) {
+        if (Storage.questionType == QuestionType.CLOSED) {
             // Set the parameters of the question
-            setParameters(data.question, data.optionA, data.optionB, data.optionC, data.optionD, data.correctAnswer, data.closedType, data.ABCDType);
-        } else if (data.questionType == QuestionType.OPEN) {
-            new Storage.Builder(data.question, data.correctAnswer, data.questionType).build();
+            setParameters(Storage.question, Storage.optionA, Storage.optionB, Storage.optionC, Storage.optionD, Storage.correctAnswer, Storage.closedType, Storage.ABCDType);
+        } else if (Storage.questionType == QuestionType.OPEN) {
+            new Storage.Builder(Storage.question, Storage.correctAnswer, Storage.questionType).build();
 
             NavHostFragment.findNavController(this)
                     .navigate(R.id.openQuestionFragment);
-        } else if (data.questionType == QuestionType.DATE) {
-            new Storage.Builder(data.question, data.correctAnswer, data.questionType).build();
+        } else if (Storage.questionType == QuestionType.DATE) {
+            new Storage.Builder(Storage.question, Storage.correctAnswer, Storage.questionType).build();
 
             NavHostFragment.findNavController(this)
                     .navigate(R.id.dateQuestionFragment);

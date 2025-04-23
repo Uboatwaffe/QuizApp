@@ -72,6 +72,13 @@ public class LoggedInFragment extends Fragment {
                     .navigate(R.id.manageDataFragment)
         );
 
+        binding.buttonStartQuiz.setOnClickListener(v -> {
+            Bundle args = new Bundle();
+            args.putBoolean("first", true);
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.action_loggedInFragment_to_closedQuestionFragment, args);
+        });
+
     }
 
     /**
