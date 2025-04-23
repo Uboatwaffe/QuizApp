@@ -10,7 +10,7 @@ import com.example.quizapp.ui.questions.QuestionType;
  * The Storage class is responsible for holding the current question data and updating it
  * from the Data class. It acts as a temporary storage for quiz-related information.
  * If no more questions are available, it throws a DataLoadingException.
- *
+ * <p>
  * This class contains static fields and methods for managing the current question state.
  *
  * @author Maciej

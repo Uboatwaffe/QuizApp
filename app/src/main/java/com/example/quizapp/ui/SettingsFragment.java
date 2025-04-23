@@ -11,7 +11,7 @@ import com.example.quizapp.databinding.FragmentSettingsBinding;
 /**
  * <p>Created on [unknown date]</p>
  * The SettingsFragment class represents the settings menu of the QuizApp.
- *
+ * <p>
  * This fragment allows users to configure application settings. It uses view binding
  * to access its layout elements and sets up click listeners for user interactions.
  *

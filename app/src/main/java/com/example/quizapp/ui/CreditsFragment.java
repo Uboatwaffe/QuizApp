@@ -13,7 +13,7 @@ import com.example.quizapp.databinding.FragmentCreditsBinding;
 /**
  * <p>Created on [unknown date]</p>
  * The CreditsFragment class is responsible for displaying the credits of the application.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles user interactions
  * through button click listeners.
  *

@@ -13,7 +13,7 @@ import com.example.quizapp.databinding.FragmentProblemBinding;
  * The ProblemFragment class is responsible for displaying an error message
  * when the application encounters an error. It provides a button for the user
  * to acknowledge the error and exit the application.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements.
  *
  * @author Uboatwaffe

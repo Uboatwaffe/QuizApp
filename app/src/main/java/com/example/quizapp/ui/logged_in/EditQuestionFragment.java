@@ -20,7 +20,7 @@ import java.util.*;
  * The EditQuestionFragment class is responsible for providing a user interface
  * to edit or add questions in the quiz application. It allows users to select
  * question types, configure options, and manage question details.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements.
  * It also handles user interactions such as selecting question types and
  * updating visibility of UI elements based on the selected options.

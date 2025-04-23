@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
@@ -17,7 +16,7 @@ import com.example.quizapp.error.exception.DataLoadingException;
  * <p>Created on [unknown date]</p>
  * The OpenQuestionFragment class is responsible for displaying and managing
  * open-ended questions in the quiz application.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles
  * user interactions through button click listeners.
  *
@@ -33,6 +32,7 @@ public class OpenQuestionFragment extends Fragment {
 
     /**
      * The correct answer to the current question.
+     * @noinspection FieldCanBeLocal, unused
      */
     private String answer;
 
@@ -54,6 +54,7 @@ public class OpenQuestionFragment extends Fragment {
 
         // Retrieve arguments passed to the fragment
         Bundle args = getArguments();
+        //noinspection DataFlowIssue
         boolean first = args.getBoolean("first");
 
         // If this is the first question, initialize the storage

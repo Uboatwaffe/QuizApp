@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentClosedQuestionBinding;
-import com.example.quizapp.db.Data;
 import com.example.quizapp.db.Storage;
 import com.example.quizapp.error.exception.DataLoadingException;
 
@@ -18,11 +17,12 @@ import com.example.quizapp.error.exception.DataLoadingException;
  * <p>Created on [unknown date]</p>
  * The ClosedQuestionFragment class is responsible for displaying and managing
  * questions with single/multiple/true or false choice answers.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles
  * user interactions through button click listeners.
  *
  * @version 1.0
+ * @noinspection DataFlowIssue
  */
 public class ClosedQuestionFragment extends Fragment {
 
@@ -41,6 +41,12 @@ public class ClosedQuestionFragment extends Fragment {
      * The type of question (ABCD or true/false).
      */
     private ClosedTypes question_type = ClosedTypes.NONE;
+
+    /**
+     * The correct answer to the current question.
+     * @noinspection FieldCanBeLocal, unused
+     */
+    private String answer;
 
     /**
      * An array of checkboxes used for displaying answer options.
@@ -68,6 +74,7 @@ public class ClosedQuestionFragment extends Fragment {
 
         // Retrieve arguments passed to the fragment
         Bundle args = getArguments();
+        //noinspection DataFlowIssue
         boolean first = args.getBoolean("first");
 
         // If this is the first question, initialize the storage
@@ -102,6 +109,7 @@ public class ClosedQuestionFragment extends Fragment {
     private void setParameters(String question, String optionA, String optionB, String optionC, String optionD, String correctAns, ClosedTypes question_type_new, EnumOfABCD ABCD_type_new) {
         ABCD_type = ABCD_type_new;
         question_type = question_type_new;
+        answer = correctAns;
 
         // Configure the UI based on the question type
         if (question_type == ClosedTypes.ABCD) {

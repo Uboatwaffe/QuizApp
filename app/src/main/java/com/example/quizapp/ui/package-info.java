@@ -2,7 +2,7 @@
  * <p>Created on 19.03.2025</p>
  *
  * Package for managing the user interface of the quiz application.
- *
+ * <p>
  * Responsibilities of this package include:
  * <ul>
  *     <li>Providing fragments and activities for various user interface components.</li>

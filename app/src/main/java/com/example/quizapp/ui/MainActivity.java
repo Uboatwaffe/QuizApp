@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Initializes the contents of the Activity's standard options menu.
+     * Initializes the contents of the Activity's standard option's menu.
      *
      * @param menu The options menu in which you place your items.
      * @return true if the menu should be displayed; false otherwise.
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Handles item selection in the options menu.
+     * Handles item selection in the option's menu.
      *
      * @param item The menu item that was selected.
      * @return true if the event was handled; false otherwise.

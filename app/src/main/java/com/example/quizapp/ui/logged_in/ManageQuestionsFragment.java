@@ -20,7 +20,7 @@ import java.util.List;
  * <p>Created on [unknown date]</p>
  * The ManageQuestionsFragment class is responsible for managing quiz questions.
  * It provides a user interface to add, edit, or navigate between questions.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles
  * user interactions through button click listeners and spinner item selection.
  *

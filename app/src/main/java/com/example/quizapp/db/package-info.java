@@ -1,7 +1,7 @@
 /**
  * <p>Created on 23.03.2025</p>
  * Package containing classes that are responsible for managing the database.
- *
+ * <p>
  * Responsibilities of this package include:
  * <ul>
  *   <li>Handling data storage and retrieval operations.</li>

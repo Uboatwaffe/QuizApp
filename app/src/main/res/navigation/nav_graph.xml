@@ -175,7 +175,7 @@
     </fragment>
     <fragment
         android:id="@+id/scoreFragment"
-        android:name="com.example.quizapp.ScoreFragment"
+        android:name="com.example.quizapp.ui.logged_in.ScoreFragment"
         android:label="fragment_score"
         tools:layout="@layout/fragment_score" />
 </navigation>

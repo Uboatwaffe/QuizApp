@@ -2,7 +2,7 @@
  * <p>Created on 27.03.2025</p>
  *
  * Package for managing the user interface related to questions in the quiz application.
- *
+ * <p>
  * Responsibilities of this package include:
  * <ul>
  *     <li>Providing fragments for different types of questions (closed, open, date-based).</li>

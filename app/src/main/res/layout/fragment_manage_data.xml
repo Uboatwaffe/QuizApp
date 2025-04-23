@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_text"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor,TextFields" />
 
     <TextView
         android:id="@+id/info_text_data"

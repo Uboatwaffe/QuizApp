@@ -15,7 +15,7 @@ import com.example.quizapp.databinding.FragmentLoggedInBinding;
  * The LoggedInFragment class is responsible for displaying the menu for logged-in users.
  * It provides navigation options to various features of the application, such as managing
  * sets, modifying questions, and starting a quiz.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles user interactions
  * through button click listeners.
  *

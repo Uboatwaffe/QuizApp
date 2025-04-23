@@ -13,7 +13,7 @@ import com.example.quizapp.databinding.FragmentMainMenuBinding;
 /**
  * <p>Created on [unknown date]</p>
  * The MainMenuFragment class represents the main menu of the QuizApp.
- *
+ * <p>
  * This fragment provides navigation options to other parts of the application, such as the welcome screen,
  * credits screen, and login screen. It uses view binding to access its layout elements and sets up
  * click listeners for the buttons in the main menu.

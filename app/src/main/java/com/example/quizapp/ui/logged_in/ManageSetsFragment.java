@@ -21,7 +21,7 @@ import java.util.List;
  * The ManageSetsFragment class is responsible for displaying and managing
  * available sets of questions. It provides a user interface to refresh the
  * list of sets or navigate back to the logged-in menu.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles
  * user interactions through button click listeners.
  *

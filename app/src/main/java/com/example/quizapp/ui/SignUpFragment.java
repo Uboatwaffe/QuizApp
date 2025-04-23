@@ -11,7 +11,7 @@ import com.example.quizapp.databinding.FragmentSignUpBinding;
 /**
  * <p>Created on [unknown date]</p>
  * The SignUpFragment class represents the sign-up screen of the QuizApp.
- *
+ * <p>
  * This fragment allows users to create a new account. It uses view binding to access
  * its layout elements and sets up click listeners for user interactions.
  *

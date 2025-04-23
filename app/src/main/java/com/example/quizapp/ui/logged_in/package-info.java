@@ -2,7 +2,7 @@
  * <p>Created on 27.03.2025</p>
  *
  * Package for managing activities for logged-in users.
- *
+ * <p>
  * Responsibilities of this package include:
  * <ul>
  *     <li>Providing user interfaces for logged-in users to manage their data and questions.</li>

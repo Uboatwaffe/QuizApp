@@ -15,7 +15,7 @@ import com.example.quizapp.databinding.FragmentManageDataBinding;
  * The ManageDataFragment class is responsible for providing a user interface
  * to manage user data within the quiz application. It allows users to navigate
  * back to the logged-in menu or perform other data-related actions.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and handles
  * user interactions through button click listeners.
  *

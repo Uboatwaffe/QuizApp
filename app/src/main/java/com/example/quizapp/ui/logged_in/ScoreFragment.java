@@ -6,16 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-import com.example.quizapp.R;
-import com.example.quizapp.databinding.FragmentCreditsBinding;
 import com.example.quizapp.databinding.FragmentScoreBinding;
 
 /**
  * <p>Created on [unknown date]</p>
  * The ScoreFragment class is responsible for displaying the user's score.
  * It provides a user interface to show score-related information.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements.
  *
  * @version 1.0

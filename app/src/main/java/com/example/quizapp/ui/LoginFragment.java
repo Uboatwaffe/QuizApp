@@ -14,7 +14,7 @@ import com.example.quizapp.databinding.FragmentLoginBinding;
  * <p>Created on [unknown date]</p>
  * The LoginFragment class is responsible for managing the login screen of the application.
  * It handles user interactions such as login and navigation to the sign-up screen.
- *
+ * <p>
  * This fragment uses view binding to access its layout elements and provides basic
  * authentication functionality for demonstration purposes.
  *
