@@ -10,86 +10,94 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentLoggedInBinding;
 
-
-
 /**
- * This fragment is used to display the menu for logged-in users.
+ * <p>Created on 23.04.2025</p>
+ * The LoggedInFragment class is responsible for displaying the menu for logged-in users.
+ * It provides navigation options to various features of the application, such as managing
+ * sets, modifying questions, and starting a quiz.
+ *
+ * This fragment uses view binding to access its layout elements and handles user interactions
+ * through button click listeners.
+ *
+ * @author Uboatwaffe
+ * @version 1.0
  */
 public class LoggedInFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
+     * Used to access the views defined in the layout file.
      */
     private FragmentLoggedInBinding binding;
 
     /**
-     * This method is called when the fragment is created.
+     * Called to create the view hierarchy associated with the fragment.
      *
-     * @param inflater           The layout inflater.
-     * @param container          The view group container.
-     * @param savedInstanceState The saved instance state.
-     * @return The view of the fragment.
+     * @param inflater           The LayoutInflater object that can be used to inflate views in the fragment.
+     * @param container          The parent view that the fragment's UI should be attached to, or null if not attached.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
+     * @return The root view of the fragment's layout.
      */
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         // Inflate the layout for this fragment
         binding = FragmentLoggedInBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     /**
-     * This method is called when the view is created.
+     * Called immediately after the view is created.
+     * Sets up click listeners for the buttons to navigate to different fragments or perform actions.
      *
-     * @param view               The view of the fragment.
-     * @param savedInstanceState The saved instance state.
+     * @param view               The view returned by onCreateView.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Listeners
+        // Set up navigation to the MainMenuFragment
         binding.buttonLogOut.setOnClickListener(v ->
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.mainMenuFragment)
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.mainMenuFragment)
         );
 
+        // Set up navigation to the ManageSetsFragment
         binding.buttonChangeSets.setOnClickListener(v ->
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.manageSetsFragment)
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.manageSetsFragment)
         );
 
+        // Set up navigation to the ManageQuestionsFragment
         binding.buttonModifyQuestions.setOnClickListener(v ->
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.manageQuestionsFragment)
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.manageQuestionsFragment)
         );
 
+        // Set up navigation to the ManageDataFragment
         binding.buttonModifyData.setOnClickListener(v ->
-            NavHostFragment.findNavController(this)
-                    .navigate(R.id.manageDataFragment)
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.manageDataFragment)
         );
 
+        // Set up navigation to the ClosedQuestionFragment with arguments
         binding.buttonStartQuiz.setOnClickListener(v -> {
             Bundle args = new Bundle();
             args.putBoolean("first", true);
             NavHostFragment.findNavController(this)
                     .navigate(R.id.action_loggedInFragment_to_closedQuestionFragment, args);
         });
-
     }
 
     /**
-     * This method is called when the view is destroyed.
+     * Called when the view hierarchy associated with the fragment is being removed.
+     * Cleans up the binding object to prevent memory leaks.
      */
     @Override
     public void onDestroyView() {
-
-        // Set the binding to null
         super.onDestroyView();
-        binding = null;
+        binding = null; // Clear the binding reference
     }
-
 }

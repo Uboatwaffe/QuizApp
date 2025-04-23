@@ -2,6 +2,7 @@
  * <p>Created on 19.03.2025</p>
  * Package for error handling
  * <ul>
+ *     <li> {@link com.example.quizapp.error.exception} - package for exceptions </li>
  *     <li> {@link com.example.quizapp.error.ProblemFragment} - class for informing user about occurred error </li>
  * </ul>
  *

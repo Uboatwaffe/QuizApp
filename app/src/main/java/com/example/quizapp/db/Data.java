@@ -8,21 +8,30 @@ import java.util.List;
 
 /**
  * <p>Created on 23.03.2025</p>
- * Class for storing data (to be replaced by proper class)
+ * Class for storing and managing quiz data.
+ * This class contains static fields and methods for handling questions, options, and their types.
+ * It is intended to be replaced by a proper implementation in the future.
+ *
  * @author Maciej
  * @version 0.1
  */
 public class Data {
-    private static String question = null;
-    private static String optionA = null;
-    private static String optionB = null;
-    private static String optionC = null;
-    private static String optionD = null;
-    private static String correctAnswer = null;
-    private static ClosedTypes closedType = ClosedTypes.NONE;
-    private static EnumOfABCD ABCDType = EnumOfABCD.NONE;
-    private static QuestionType questionType = QuestionType.NONE;
 
+    // Static fields for storing question data
+    private static String question = null; // The current question text
+    private static String optionA = null; // Option A for the current question
+    private static String optionB = null; // Option B for the current question
+    private static String optionC = null; // Option C for the current question
+    private static String optionD = null; // Option D for the current question
+    private static String correctAnswer = null; // The correct answer for the current question
+    private static ClosedTypes closedType = ClosedTypes.NONE; // The type of closed question
+    private static EnumOfABCD ABCDType = EnumOfABCD.NONE; // The type of ABCD question
+    private static QuestionType questionType = QuestionType.NONE; // The type of the question (e.g., open, closed)
+
+    /**
+     * A static list of question IDs.
+     * This is a placeholder and should be replaced with a proper implementation.
+     */
     public static final List<String> questionList = List.of(
             "1",
             "2",
@@ -30,15 +39,28 @@ public class Data {
             "4"
     );
 
+    /**
+     * A static list of default sets.
+     * This is a placeholder and should be replaced with a proper implementation.
+     */
     public static final List<String> setsList = List.of(
             "Default set 1",
             "Default set 2"
     );
 
+    /**
+     * A counter used for cycling through predefined questions.
+     * This is a placeholder and should be replaced with a proper implementation.
+     */
     private static int i = 0;
 
-    public static boolean update(){
-        switch (i){
+    /**
+     * Updates the static fields with predefined question data based on the current counter value.
+     *
+     * @return true if the data was updated, false if no more updates are available.
+     */
+    public static boolean update() {
+        switch (i) {
             case 0:
             case 5:
                 question = "Single choice";
@@ -102,48 +124,87 @@ public class Data {
                 return true;
             default:
                 return false;
-
         }
-
-
     }
 
+    /**
+     * Retrieves the current question text.
+     *
+     * @return the current question.
+     */
     public static String getQuestion() {
         return question;
     }
 
+    /**
+     * Retrieves option A for the current question.
+     *
+     * @return option A.
+     */
     public static String getOptionA() {
         return optionA;
     }
 
+    /**
+     * Retrieves option B for the current question.
+     *
+     * @return option B.
+     */
     public static String getOptionB() {
         return optionB;
     }
 
+    /**
+     * Retrieves option C for the current question.
+     *
+     * @return option C.
+     */
     public static String getOptionC() {
         return optionC;
     }
 
+    /**
+     * Retrieves option D for the current question.
+     *
+     * @return option D.
+     */
     public static String getOptionD() {
         return optionD;
     }
 
+    /**
+     * Retrieves the correct answer for the current question.
+     *
+     * @return the correct answer.
+     */
     public static String getCorrectAnswer() {
         return correctAnswer;
     }
 
+    /**
+     * Retrieves the type of closed question.
+     *
+     * @return the closed question type.
+     */
     public static ClosedTypes getClosedType() {
         return closedType;
     }
 
+    /**
+     * Retrieves the type of ABCD question.
+     *
+     * @return the ABCD question type.
+     */
     public static EnumOfABCD getABCDType() {
         return ABCDType;
     }
 
+    /**
+     * Retrieves the type of the question.
+     *
+     * @return the question type.
+     */
     public static QuestionType getQuestionType() {
         return questionType;
     }
-
-
-
 }

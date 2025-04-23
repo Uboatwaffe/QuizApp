@@ -17,32 +17,41 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This fragment is used to display available sets of questions
+ * <p>Created on [unknown date]</p>
+ * The ManageSetsFragment class is responsible for displaying and managing
+ * available sets of questions. It provides a user interface to refresh the
+ * list of sets or navigate back to the logged-in menu.
+ *
+ * This fragment uses view binding to access its layout elements and handles
+ * user interactions through button click listeners.
+ *
+ * @version 1.0
  */
 public class ManageSetsFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
+     * Used to access the views defined in the layout file.
      */
     private FragmentChangeSetsBinding binding;
 
     /**
-     * The adapter for the spinner.
+     * The adapter for the spinner that displays the list of sets.
      */
     private ArrayAdapter<String> adapter;
 
     /**
-     * The list of sets.
+     * The list of sets displayed in the spinner.
      */
     private List<String> setsList;
 
     /**
-     * This method is called when the fragment is created.
+     * Called to create the view hierarchy associated with the fragment.
      *
-     * @param inflater           The layout inflater.
-     * @param container          The view group container.
-     * @param savedInstanceState The saved instance state.
-     * @return The view of the fragment.
+     * @param inflater           The LayoutInflater object that can be used to inflate views in the fragment.
+     * @param container          The parent view that the fragment's UI should be attached to, or null if not attached.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
+     * @return The root view of the fragment's layout.
      */
     @Override
     public View onCreateView(
@@ -52,17 +61,17 @@ public class ManageSetsFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentChangeSetsBinding.inflate(inflater, container, false);
 
-        // Initialize the list
+        // Initialize the list of sets from the database
         setsList = new ArrayList<>(Data.setsList);
 
-        // Initialize the spinner
+        // Initialize the spinner adapter with the list of sets
         adapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
                 setsList
         );
 
-        // Set the layout for the spinner
+        // Set the layout for the spinner dropdown
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Set the adapter for the spinner
@@ -72,19 +81,22 @@ public class ManageSetsFragment extends Fragment {
     }
 
     /**
-     * This method is called when the view is created.
-     * @param view The view of the fragment.
-     * @param savedInstanceState The saved instance state.
+     * Called immediately after the view is created.
+     * Sets up click listeners for the refresh and return buttons.
+     *
+     * @param view               The view returned by onCreateView.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Listeners
+        // Set up a click listener for the "Refresh" button to update the spinner data
         binding.buttonRefresh.setOnClickListener(v -> {
-            // Update the spinner data
+            // Update the spinner data with new sets
             updateSpinnerData("Set1", "Set2", "Set3", "Set4", "Set5");
         });
 
+        // Set up a click listener for the "Return" button to navigate back to the LoggedInFragment
         binding.buttonReturn.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.action_changeSetsFragment_to_loggedInFragment)
@@ -92,15 +104,15 @@ public class ManageSetsFragment extends Fragment {
     }
 
     /**
-     * Method to update the spinner data.
+     * Updates the spinner data with the provided list of sets.
      *
      * @param db The new data to be displayed in the spinner.
      */
-    private void updateSpinnerData(String ... db) {
-        // Clear the current list
+    private void updateSpinnerData(String... db) {
+        // Clear the current list of sets
         setsList.clear();
 
-        // Add the new data to the list
+        // Add the new data to the list of sets
         setsList.addAll(Arrays.asList(db));
 
         // Notify the adapter that the data has changed
@@ -108,12 +120,12 @@ public class ManageSetsFragment extends Fragment {
     }
 
     /**
-     * This method is called when the view is destroyed.
+     * Called when the view hierarchy associated with the fragment is being removed.
+     * Cleans up the binding object to prevent memory leaks.
      */
     @Override
     public void onDestroyView() {
-        // Set the binding to null
         super.onDestroyView();
-        binding = null;
+        binding = null; // Clear the binding reference
     }
 }

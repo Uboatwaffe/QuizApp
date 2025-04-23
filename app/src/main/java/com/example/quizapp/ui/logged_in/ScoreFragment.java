@@ -8,27 +8,25 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
-import com.example.quizapp.databinding.FragmentManageDataBinding;
+import com.example.quizapp.databinding.FragmentCreditsBinding;
+import com.example.quizapp.databinding.FragmentScoreBinding;
 
 /**
- * <p>Created on 23.04.2025</p>
- * The ManageDataFragment class is responsible for providing a user interface
- * to manage user data within the quiz application. It allows users to navigate
- * back to the logged-in menu or perform other data-related actions.
+ * <p>Created on [unknown date]</p>
+ * The ScoreFragment class is responsible for displaying the user's score.
+ * It provides a user interface to show score-related information.
  *
- * This fragment uses view binding to access its layout elements and handles
- * user interactions through button click listeners.
+ * This fragment uses view binding to access its layout elements.
  *
- * @author Uboatwaffe
  * @version 1.0
  */
-public class ManageDataFragment extends Fragment {
+public class ScoreFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
      * Used to access the views defined in the layout file.
      */
-    private FragmentManageDataBinding binding;
+    private FragmentScoreBinding binding;
 
     /**
      * Called to create the view hierarchy associated with the fragment.
@@ -44,13 +42,13 @@ public class ManageDataFragment extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        binding = FragmentManageDataBinding.inflate(inflater, container, false);
+        binding = FragmentScoreBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
     /**
      * Called immediately after the view is created.
-     * Sets up a click listener for the "Scratch" button to navigate back to the logged-in menu.
+     * Sets up any required listeners or initializes UI components.
      *
      * @param view               The view returned by onCreateView.
      * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
@@ -59,11 +57,7 @@ public class ManageDataFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Set up a click listener for the "Scratch" button to navigate to the LoggedInFragment
-        binding.buttonScratch.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.action_manageDataFragment_to_loggedInFragment)
-        );
+        // Listeners can be added here
     }
 
     /**

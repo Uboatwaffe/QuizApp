@@ -13,71 +13,74 @@ import com.example.quizapp.databinding.FragmentWelcomeBinding;
 import java.util.Objects;
 
 /**
- * This fragment represents the welcome screen of the QuizApp.
+ * <p>WelcomeFragment represents the welcome screen of the QuizApp.</p>
+ *
+ * This fragment serves as the entry point of the application, providing users with options
+ * to start the quiz or close the app. It uses view binding to access its layout elements
+ * and sets up click listeners for user interactions.
+ *
+ * @version 1.0
  */
 public class WelcomeFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
+     * Used to access the views defined in the layout file.
      */
     private FragmentWelcomeBinding binding;
 
     /**
      * Called to have the fragment instantiate its user interface view.
      *
-     * @param inflater           The LayoutInflater object that can be used to inflate any views in the fragment,
+     * @param inflater           The LayoutInflater object that can be used to inflate any views in the fragment.
      * @param container          If non-null, this is the parent view that the fragment's UI should be attached to.
      * @param savedInstanceState If non-null, this fragment is being re-constructed from a previous saved state as given here.
-     * @return Return the View for the fragment's UI, or null.
+     * @return The root view of the fragment's layout.
      */
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         // Inflate the layout for this fragment
         binding = FragmentWelcomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     /**
-     * This method is called after the view is created.
-     * It sets up the click listeners for the buttons in the fragment.
+     * Called after the view is created.
+     * Sets up the click listeners for the buttons in the fragment.
      *
      * @param view               The view returned by onCreateView.
      * @param savedInstanceState If non-null, this fragment is being re-constructed from a previous saved state as given here.
      */
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        // Listeners
+        // Set up a click listener for the "Start" button to navigate to the main menu
         binding.buttonStart.setOnClickListener(v ->
                 NavHostFragment.findNavController(WelcomeFragment.this)
                         .navigate(R.id.action_welcomeFragment_to_mainMenuFragment)
         );
 
-        // Close the app (listener)
+        // Set up a click listener for the "Close" button to close the app
         try {
             binding.buttonClose.setOnClickListener(v -> Objects.requireNonNull(getActivity()).finish());
         } catch (Exception ignore) {
+            // Navigate to a problem fragment if an exception occurs
             NavHostFragment.findNavController(WelcomeFragment.this)
                     .navigate(R.id.problemFragment);
         }
-
     }
 
     /**
-     * This method is called when the view is destroyed.
+     * Called when the view previously created by onCreateView has been detached from the fragment.
+     * Cleans up the binding object to prevent memory leaks.
      */
     @Override
     public void onDestroyView() {
-
-        // Set the binding to null
         super.onDestroyView();
-        binding = null;
+        binding = null; // Clear the binding reference
     }
-
 }

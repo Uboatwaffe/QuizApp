@@ -12,17 +12,27 @@ import com.example.quizapp.R;
 import com.example.quizapp.databinding.ActivityMainBinding;
 
 /**
- * The type Main activity.
- * This is the main activity of the QuizApp which sets up the navigation and handles the action bar.
+ * <p>MainActivity is the main entry point of the QuizApp.</p>
+ *
+ * This activity sets up the navigation components and handles the action bar interactions.
+ * It uses View Binding to access the layout elements and provides navigation between fragments.
+ *
+ * @version 1.0
  */
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Configuration for the AppBar, used to manage navigation UI components.
+     */
     private AppBarConfiguration appBarConfiguration;
 
     /**
      * Called when the activity is first created.
+     * Sets up the layout, toolbar, and navigation components.
      *
-     * @param savedInstanceState If the activity is being re-initialized after previously being shut down then this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle). Otherwise, it is null.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     *                           this Bundle contains the data it most recently supplied in onSaveInstanceState(Bundle).
+     *                           Otherwise, it is null.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Initialize the contents of the Activity's standard options' menu.
+     * Initializes the contents of the Activity's standard options menu.
+     *
      * @param menu The options menu in which you place your items.
-     * @return boolean You must return true for the menu to be displayed; if you return false it will not be shown.
+     * @return true if the menu should be displayed; false otherwise.
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,19 +65,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This hook is called whenever an item in your options menu is selected.
+     * Handles item selection in the options menu.
+     *
      * @param item The menu item that was selected.
-     * @return boolean Return false to allow normal menu processing to proceed, true to consume it here.
+     * @return true if the event was handled; false otherwise.
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
         // Get the id of the item
         int id = item.getItemId();
-
 
         // Navigating between fragments
         if (id == R.id.action_settings) {
@@ -75,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (id == R.id.action_menu) {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
             navController.navigate(R.id.mainMenuFragment);
-        } else if(id == R.id.action_debug) {
+        } else if (id == R.id.action_debug) {
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
             navController.navigate(R.id.debugFragment);
         }
@@ -85,12 +92,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method is called whenever the user chooses to navigate Up within your application's activity hierarchy from the action bar.
-     * @return boolean Return true to navigate up, false otherwise.
+     * Handles navigation when the user chooses to navigate "Up" within the application's activity hierarchy.
+     *
+     * @return true if navigation was successful; false otherwise.
      */
     @Override
     public boolean onSupportNavigateUp() {
-
         // Navigate up to the parent node of the current destination
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)

@@ -10,62 +10,65 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentDebugBinding;
 
-
-
 /**
- * This fragment is used to test fragments unreachable during normal app usage.
+ * This fragment is used to test fragments that are not accessible during normal app usage.
+ * It provides navigation to various fragments for debugging purposes.
  */
 public class DebugFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
+     * Used to access the views defined in the layout file.
      */
     private FragmentDebugBinding binding;
 
     /**
-     * This method is called when the fragment is created.
+     * Called to create the view hierarchy associated with the fragment.
      *
-     * @param inflater           The layout inflater.
-     * @param container          The view group container.
-     * @param savedInstanceState The saved instance state.
-     * @return The view of the fragment.
+     * @param inflater           The LayoutInflater object that can be used to inflate views in the fragment.
+     * @param container          The parent view that the fragment's UI should be attached to, or null if not attached.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
+     * @return The root view of the fragment's layout.
      */
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment and initialize the binding object
         binding = FragmentDebugBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     /**
-     * This method is called when the view is created.
-     * @param view The view of the fragment.
-     * @param savedInstanceState The saved instance state.
+     * Called immediately after the view is created.
+     * Sets up click listeners for the buttons to navigate to different fragments.
+     *
+     * @param view               The view returned by onCreateView.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Listeners
+        // Set up navigation to the ProblemFragment
         binding.buttonProblem.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.problemFragment)
         );
 
+        // Set up navigation to the ClosedQuestionFragment
         binding.buttonAbcd.setOnClickListener(v ->
-                    NavHostFragment.findNavController(this)
-                            .navigate(R.id.closedQuestionFragment)
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.closedQuestionFragment)
         );
 
+        // Set up navigation to the DateQuestionFragment
         binding.buttonDate.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.dateQuestionFragment)
         );
 
+        // Set up navigation to the OpenQuestionFragment
         binding.buttonOpen.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.openQuestionFragment)
@@ -73,14 +76,12 @@ public class DebugFragment extends Fragment {
     }
 
     /**
-     * This method is called when the view is destroyed.
+     * Called when the view hierarchy associated with the fragment is being removed.
+     * Cleans up the binding object to prevent memory leaks.
      */
     @Override
     public void onDestroyView() {
-
-        // Set the binding to null
         super.onDestroyView();
-        binding = null;
+        binding = null; // Clear the binding reference
     }
-
 }

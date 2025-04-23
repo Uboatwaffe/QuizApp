@@ -15,36 +15,44 @@ import com.example.quizapp.databinding.FragmentEditQuestionBinding;
 
 import java.util.*;
 
-
 /**
- * This fragment is used to edit and add questions.
+ * <p>Created on 23.04.2025</p>
+ * The EditQuestionFragment class is responsible for providing a user interface
+ * to edit or add questions in the quiz application. It allows users to select
+ * question types, configure options, and manage question details.
+ *
+ * This fragment uses view binding to access its layout elements.
+ * It also handles user interactions such as selecting question types and
+ * updating visibility of UI elements based on the selected options.
+ *
+ * @author Uboatwaffe
+ * @version 1.0
  */
 public class EditQuestionFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
+     * Used to access the views defined in the layout file.
      */
     private FragmentEditQuestionBinding binding;
 
-
     /**
-     * This method is called when the fragment is created.
+     * Called to create the view hierarchy associated with the fragment.
      *
-     * @param inflater           The layout inflater.
-     * @param container          The view group container.
-     * @param savedInstanceState The saved instance state.
-     * @return The view of the fragment.
+     * @param inflater           The LayoutInflater object that can be used to inflate views in the fragment.
+     * @param container          The parent view that the fragment's UI should be attached to, or null if not attached.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
+     * @return The root view of the fragment's layout.
      */
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         // Inflate the layout for this fragment
         binding = FragmentEditQuestionBinding.inflate(inflater, container, false);
 
-        // Initialize the questionTypeList
+        // Initialize the question type list
         List<String> questionTypeList = List.of(
                 getString(R.string.select_question_type),
                 getString(R.string.open_question),
@@ -52,81 +60,61 @@ public class EditQuestionFragment extends Fragment {
                 getString(R.string.date_question)
         );
 
-
-        // Initialize the spinner
+        // Initialize the spinner with an adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
                 questionTypeList
         );
 
-        // Set the layout for the spinner
+        // Set the layout for the spinner dropdown
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         // Set the adapter for the spinner
         binding.spinnerTypeOfQuestion.setAdapter(adapter);
 
-
-
-        // Getting arguments from the previous fragment
+        // Retrieve arguments passed from the previous fragment
         int questionId = getArguments() != null ? getArguments().getInt("question_id") : -1;
         String action = getArguments() != null ? getArguments().getString("action") : null;
 
-        // Setting the question as text in the edit text (currently id is shown)
-        //TODO: Get the question from the database and set it as text (and additional data)
-
+        // Set the question text or initialize for adding a new question
         assert action != null;
         if (action.equals("add")) {
             binding.editQuestion.setText(R.string.type_here_text);
             HideAbcd();
-        }else{
+        } else {
             binding.editQuestion.setText(String.valueOf(questionId));
-
         }
 
-
         return binding.getRoot();
-
     }
 
     /**
-     * This method is called when the view is created.
-     * @param view The view of the fragment.
-     * @param savedInstanceState The saved instance state.
+     * Called immediately after the view is created.
+     * Sets up listeners for user interactions such as checkbox clicks and spinner selections.
+     *
+     * @param view               The view returned by onCreateView.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Listeners
-        binding.checkBoxAbcd.setOnClickListener(v ->{
-            // Update other checkboxes according to the type of question
-            Update(binding.checkBoxAbcd);
-        });
+        // Set up listeners for checkboxes
+        binding.checkBoxAbcd.setOnClickListener(v -> Update(binding.checkBoxAbcd));
+        binding.checkBoxTf.setOnClickListener(v -> Update(binding.checkBoxTf));
+        binding.checkBoxSingle.setOnClickListener(v -> Update(binding.checkBoxSingle));
+        binding.checkBoxMultiple.setOnClickListener(v -> Update(binding.checkBoxMultiple));
 
-        binding.checkBoxTf.setOnClickListener(v ->{
-            // Update other checkboxes according to the type of question
-            Update(binding.checkBoxTf);
-        });
-
-        binding.checkBoxSingle.setOnClickListener(v ->{
-            // Update other checkboxes according to the type of question
-            Update(binding.checkBoxSingle);
-        });
-
-        binding.checkBoxMultiple.setOnClickListener(v ->{
-            // Update other checkboxes according to the type of question
-            Update(binding.checkBoxMultiple);
-        });
-
+        // Set up listener for the delete button
         binding.buttonDelete.setOnClickListener(v ->
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.action_editQuestionFragment_to_manageQuestionsFragment)
         );
 
+        // Set up listener for the spinner
         binding.spinnerTypeOfQuestion.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // Set correct visibility for the checkboxes and text
                 Set();
             }
 
@@ -137,14 +125,15 @@ public class EditQuestionFragment extends Fragment {
         });
     }
 
-    private void Set(){
-        // Get the selected question type
+    /**
+     * Updates the visibility of UI elements based on the selected question type.
+     */
+    private void Set() {
         String selectedQuestionType = binding.spinnerTypeOfQuestion.getSelectedItem().toString();
 
-        // Check if the question type is closed
-        if(selectedQuestionType.equals(getString(R.string.select_question_type))){
+        if (selectedQuestionType.equals(getString(R.string.select_question_type))) {
             ShowAbcd();
-        }else if (selectedQuestionType.equals(getString(R.string.closed_question))) {
+        } else if (selectedQuestionType.equals(getString(R.string.closed_question))) {
             binding.checkBoxAbcd.setVisibility(View.VISIBLE);
             binding.checkBoxTf.setVisibility(View.VISIBLE);
             binding.closedTypeText.setVisibility(View.VISIBLE);
@@ -158,29 +147,28 @@ public class EditQuestionFragment extends Fragment {
     }
 
     /**
-     * This method is called when any checkbox is clicked.
+     * Updates the state of checkboxes and visibility of related UI elements.
      *
-     * @param current The current checkbox.
+     * @param current The checkbox that was clicked.
      */
-    private void Update(CheckBox current){
-        if(current == binding.checkBoxAbcd) {
+    private void Update(CheckBox current) {
+        if (current == binding.checkBoxAbcd) {
             binding.checkBoxTf.setChecked(false);
             ShowAbcd();
-        }else if(current == binding.checkBoxTf){
+        } else if (current == binding.checkBoxTf) {
             binding.checkBoxAbcd.setChecked(false);
             HideAbcd();
-        }else if(current == binding.checkBoxSingle){
+        } else if (current == binding.checkBoxSingle) {
             binding.checkBoxMultiple.setChecked(false);
-        }else if(current == binding.checkBoxMultiple){
+        } else if (current == binding.checkBoxMultiple) {
             binding.checkBoxSingle.setChecked(false);
         }
-
     }
 
     /**
-     * This method is called to hide the abcd options.
+     * Hides the UI elements related to ABCD options.
      */
-    private void HideAbcd(){
+    private void HideAbcd() {
         binding.checkBoxSingle.setVisibility(View.GONE);
         binding.checkBoxMultiple.setVisibility(View.GONE);
         binding.singleOrMultipleText.setVisibility(View.GONE);
@@ -197,9 +185,9 @@ public class EditQuestionFragment extends Fragment {
     }
 
     /**
-     * This method is called to show the abcd options.
+     * Shows the UI elements related to ABCD options.
      */
-    private void ShowAbcd(){
+    private void ShowAbcd() {
         binding.checkBoxSingle.setVisibility(View.VISIBLE);
         binding.checkBoxMultiple.setVisibility(View.VISIBLE);
         binding.singleOrMultipleText.setVisibility(View.VISIBLE);
@@ -215,17 +203,13 @@ public class EditQuestionFragment extends Fragment {
         binding.optionsText.setVisibility(View.VISIBLE);
     }
 
-    //TODO: Force user to not leave without checking boxes
-
     /**
-     * This method is called when the view is destroyed.
+     * Called when the view hierarchy associated with the fragment is being removed.
+     * Cleans up the binding object to prevent memory leaks.
      */
     @Override
     public void onDestroyView() {
-
-        // Set the binding to null
         super.onDestroyView();
         binding = null;
     }
-
 }

@@ -13,134 +13,127 @@ import com.example.quizapp.databinding.FragmentDateQuestionBinding;
 import com.example.quizapp.db.Storage;
 import com.example.quizapp.error.exception.DataLoadingException;
 
-
 /**
- * This fragment is used to display the date question.
- * @noinspection FieldCanBeLocal
+ * <p>Created on [unknown date]</p>
+ * The DateQuestionFragment class is responsible for displaying and managing
+ * date-based questions in the quiz application.
+ *
+ * This fragment uses view binding to access its layout elements and handles
+ * user interactions through button click listeners.
+ *
+ * @version 1.0
  */
 public class DateQuestionFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
+     * Used to access the views defined in the layout file.
      */
     private FragmentDateQuestionBinding binding;
 
     /**
-     * The answer to the question.
+     * The correct answer to the current question.
      */
     private String answer;
 
     /**
-     * This method is called when the fragment is created.
+     * Called to create the view hierarchy associated with the fragment.
      *
-     * @param inflater           The layout inflater.
-     * @param container          The view group container.
-     * @param savedInstanceState The saved instance state.
-     * @return The view of the fragment.
+     * @param inflater           The LayoutInflater object that can be used to inflate views in the fragment.
+     * @param container          The parent view that the fragment's UI should be attached to, or null if not attached.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
+     * @return The root view of the fragment's layout.
      */
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-
         // Inflate the layout for this fragment
         binding = FragmentDateQuestionBinding.inflate(inflater, container, false);
 
-
-        // Get the arguments from the bundle
+        // Retrieve arguments passed to the fragment
         Bundle args = getArguments();
         boolean first = args.getBoolean("first");
 
-
-        if(first){
+        // If this is the first question, initialize the storage
+        if (first) {
             try {
                 Storage.setNew();
-            }catch (DataLoadingException e){
-                // If there are no more questions, end the quiz
-                /// If there are no more questions, end the quiz
+            } catch (DataLoadingException e) {
+                // Navigate to the score fragment if no more questions are available
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.scoreFragment);
             }
         }
 
+        // Load the next question
         NextQuestion();
 
         return binding.getRoot();
-
     }
 
     /**
-     * This method is called when the view is created.
-     * @param view The view of the fragment.
-     * @param savedInstanceState The saved instance state.
+     * Called immediately after the view is created.
+     * Sets up listeners for the "Next" button.
+     *
+     * @param view               The view returned by onCreateView.
+     * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
      */
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Listeners
-        binding.buttonNextDate.setOnClickListener(v->{
+        // Set up a click listener for the "Next" button
+        binding.buttonNextDate.setOnClickListener(v -> {
             // TODO: Check if the answer is correct and if there are more questions
-            //noinspection ConstantValue
-            if(true){
-                try {
-                    Storage.setNew();
-                }catch (DataLoadingException e){
-                    // If there are no more questions, end the quiz
-                    // If there are no more questions, end the quiz
-                    NavHostFragment.findNavController(this)
-                            .navigate(R.id.scoreFragment);
-                }
-                NextQuestion();
+            try {
+                Storage.setNew();
+            } catch (DataLoadingException e) {
+                // Navigate to the score fragment if no more questions are available
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.scoreFragment);
             }
+            NextQuestion();
         });
     }
 
     /**
-     * This method is called when the view is created.
-     * @param question The question to be displayed.
+     * Sets the parameters for the current question.
+     *
+     * @param question   The question text to be displayed.
      * @param correctAns The correct answer to the question.
      */
     private void setParameters(String question, String correctAns) {
-
-        // Set the text of the question and the options
+        // Set the text of the question
         binding.questionTextDate.setText(question);
 
+        // Store the correct answer
         answer = correctAns;
     }
 
     /**
-     * This method is used to get the next question from the database.
+     * Loads the next question from the database and updates the UI.
      */
-    private void NextQuestion(){
-
-
+    private void NextQuestion() {
         if (Storage.questionType == QuestionType.CLOSED) {
             NavHostFragment.findNavController(this)
                     .navigate(R.id.dateQuestionFragment);
-
         } else if (Storage.questionType == QuestionType.OPEN) {
-
-
             NavHostFragment.findNavController(this)
                     .navigate(R.id.openQuestionFragment);
         } else if (Storage.questionType == QuestionType.DATE) {
-
             setParameters(Storage.question, Storage.correctAnswer);
-
         }
-
     }
 
     /**
-     * This method is called when the view is destroyed.
+     * Called when the view hierarchy associated with the fragment is being removed.
+     * Cleans up the binding object to prevent memory leaks.
      */
     @Override
     public void onDestroyView() {
-
-        // Set the binding to null
         super.onDestroyView();
-        binding = null;
+        binding = null; // Clear the binding reference
     }
-
 }
