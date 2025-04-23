@@ -92,12 +92,6 @@
         android:name="com.example.quizapp.ui.questions.ClosedQuestionFragment"
         android:label="@string/question_label"
         tools:layout="@layout/fragment_closed_question" >
-        <action
-            android:id="@+id/action_closedQuestionFragment_to_dateQuestionFragment"
-            app:destination="@id/dateQuestionFragment" />
-        <action
-            android:id="@+id/action_closedQuestionFragment_to_openQuestionFragment"
-            app:destination="@id/openQuestionFragment" />
         <argument
             android:name="first"
             app:argType="boolean"
@@ -113,12 +107,6 @@
         android:name="com.example.quizapp.ui.questions.DateQuestionFragment"
         android:label="@string/question_label"
         tools:layout="@layout/fragment_date_question" >
-        <action
-            android:id="@+id/action_dateQuestionFragment_to_openQuestionFragment"
-            app:destination="@id/openQuestionFragment" />
-        <action
-            android:id="@+id/action_dateQuestionFragment_to_closedQuestionFragment"
-            app:destination="@id/closedQuestionFragment" />
         <argument
             android:name="first"
             app:argType="boolean"
@@ -129,12 +117,6 @@
         android:name="com.example.quizapp.ui.questions.OpenQuestionFragment"
         android:label="@string/question_label"
         tools:layout="@layout/fragment_open_question" >
-        <action
-            android:id="@+id/action_openQuestionFragment_to_dateQuestionFragment"
-            app:destination="@id/dateQuestionFragment" />
-        <action
-            android:id="@+id/action_openQuestionFragment_to_closedQuestionFragment"
-            app:destination="@id/closedQuestionFragment" />
         <argument
             android:name="first"
             app:argType="boolean"
@@ -191,4 +173,9 @@
             android:id="@+id/action_manageDataFragment_to_loggedInFragment"
             app:destination="@id/loggedInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/scoreFragment"
+        android:name="com.example.quizapp.ScoreFragment"
+        android:label="fragment_score"
+        tools:layout="@layout/fragment_score" />
 </navigation>

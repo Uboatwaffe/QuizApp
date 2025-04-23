@@ -12,6 +12,7 @@ import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentClosedQuestionBinding;
 import com.example.quizapp.db.Data;
 import com.example.quizapp.db.Storage;
+import com.example.quizapp.error.exception.DataLoadingException;
 
 
 /**
@@ -66,7 +67,14 @@ public class ClosedQuestionFragment extends Fragment {
 
 
         if(first){
-            Storage.setNew();
+            try {
+                Storage.setNew();
+            }catch (DataLoadingException e){
+                // If there are no more questions, end the quiz
+                // If there are no more questions, end the quiz
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.scoreFragment);
+            }
         }
 
         NextQuestion();
@@ -163,7 +171,13 @@ public class ClosedQuestionFragment extends Fragment {
             // TODO: Check if the answer is correct and if there are more questions
             //noinspection ConstantValue
             if(true){
-                Storage.setNew();
+                try {
+                    Storage.setNew();
+                }catch (DataLoadingException e){
+                    // If there are no more questions, end the quiz
+                    NavHostFragment.findNavController(this)
+                            .navigate(R.id.scoreFragment);
+                }
                 NextQuestion();
             }
         });
