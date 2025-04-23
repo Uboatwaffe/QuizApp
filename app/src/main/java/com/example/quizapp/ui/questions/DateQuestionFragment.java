@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentDateQuestionBinding;
 import com.example.quizapp.db.Storage;
 
@@ -43,7 +46,17 @@ public class DateQuestionFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentDateQuestionBinding.inflate(inflater, container, false);
 
-        setParameters(Storage.question, Storage.correctAnswer);
+
+        // Get the arguments from the bundle
+        Bundle args = getArguments();
+        boolean first = args.getBoolean("first");
+
+
+        if(first){
+            Storage.setNew();
+        }
+
+        NextQuestion();
 
         return binding.getRoot();
 
@@ -58,7 +71,14 @@ public class DateQuestionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
-
+        binding.buttonNextDate.setOnClickListener(v->{
+            // TODO: Check if the answer is correct and if there are more questions
+            //noinspection ConstantValue
+            if(true){
+                Storage.setNew();
+                NextQuestion();
+            }
+        });
     }
 
     /**
@@ -72,6 +92,29 @@ public class DateQuestionFragment extends Fragment {
         binding.questionTextDate.setText(question);
 
         answer = correctAns;
+    }
+
+    /**
+     * This method is used to get the next question from the database.
+     */
+    private void NextQuestion(){
+
+
+        if (Storage.questionType == QuestionType.CLOSED) {
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.dateQuestionFragment);
+
+        } else if (Storage.questionType == QuestionType.OPEN) {
+
+
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.openQuestionFragment);
+        } else if (Storage.questionType == QuestionType.DATE) {
+
+            setParameters(Storage.question, Storage.correctAnswer);
+
+        }
+
     }
 
     /**

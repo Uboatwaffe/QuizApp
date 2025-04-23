@@ -4,8 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentOpenQuestionBinding;
 import com.example.quizapp.db.Storage;
 
@@ -43,7 +46,17 @@ public class OpenQuestionFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentOpenQuestionBinding.inflate(inflater, container, false);
 
-        setParameters(Storage.question, Storage.correctAnswer);
+        // Get the arguments from the bundle
+        Bundle args = getArguments();
+        boolean first = args.getBoolean("first");
+
+
+        if(first){
+            Storage.setNew();
+        }
+
+        NextQuestion();
+
         return binding.getRoot();
 
     }
@@ -57,6 +70,33 @@ public class OpenQuestionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Listeners
+        binding.buttonNext.setOnClickListener(v->{
+            // TODO: Check if the answer is correct and if there are more questions
+            //noinspection ConstantValue
+            if(true){
+                Storage.setNew();
+                NextQuestion();
+            }
+        });
+    }
+
+    private void NextQuestion(){
+
+
+        if (Storage.questionType == QuestionType.CLOSED) {
+
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.closedQuestionFragment);
+
+        } else if (Storage.questionType == QuestionType.OPEN) {
+
+            setParameters(Storage.question, Storage.correctAnswer);
+
+        } else if (Storage.questionType == QuestionType.DATE) {
+
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.dateQuestionFragment);
+        }
 
     }
 

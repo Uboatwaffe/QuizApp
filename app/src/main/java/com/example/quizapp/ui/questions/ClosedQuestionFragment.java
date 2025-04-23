@@ -180,12 +180,10 @@ public class ClosedQuestionFragment extends Fragment {
             // Set the parameters of the question
             setParameters(Storage.question, Storage.optionA, Storage.optionB, Storage.optionC, Storage.optionD, Storage.correctAnswer, Storage.closedType, Storage.ABCDType);
         } else if (Storage.questionType == QuestionType.OPEN) {
-            new Storage.Builder(Storage.question, Storage.correctAnswer, Storage.questionType).build();
 
             NavHostFragment.findNavController(this)
                     .navigate(R.id.openQuestionFragment);
         } else if (Storage.questionType == QuestionType.DATE) {
-            new Storage.Builder(Storage.question, Storage.correctAnswer, Storage.questionType).build();
 
             NavHostFragment.findNavController(this)
                     .navigate(R.id.dateQuestionFragment);

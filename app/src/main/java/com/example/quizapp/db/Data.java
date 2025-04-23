@@ -40,7 +40,8 @@ public class Data {
     public static boolean update(){
         switch (i){
             case 0:
-                question = "What is the capital of France?";
+            case 5:
+                question = "Single choice";
                 optionA = "Berlin";
                 optionB = "Madrid";
                 optionC = "Paris";
@@ -52,31 +53,34 @@ public class Data {
                 i++;
                 return true;
             case 1:
-                question = "What is the capital of Germany?";
+            case 6:
+                question = "Multiple choice";
                 optionA = "Berlin";
                 optionB = "Madrid";
                 optionC = "Paris";
                 optionD = "Rome";
                 correctAnswer = "Berlin";
                 closedType = ClosedTypes.ABCD;
-                ABCDType = EnumOfABCD.SINGLE;
+                ABCDType = EnumOfABCD.MULTIPLE;
                 questionType = QuestionType.CLOSED;
                 i++;
                 return true;
             case 2:
-                question = "What is the capital of Spain?";
+            case 7:
+                question = "True/False";
                 optionA = "Berlin";
                 optionB = "Madrid";
                 optionC = "Paris";
                 optionD = "Rome";
                 correctAnswer = "Madrid";
-                closedType = ClosedTypes.ABCD;
+                closedType = ClosedTypes.TRUE_FALSE;
                 ABCDType = EnumOfABCD.SINGLE;
                 questionType = QuestionType.CLOSED;
                 i++;
                 return true;
             case 3:
-                question = "What is the capital of Italy?";
+            case 8:
+                question = "Date";
                 optionA = "Berlin";
                 optionB = "Madrid";
                 optionC = "Paris";
@@ -84,12 +88,23 @@ public class Data {
                 correctAnswer = "Rome";
                 closedType = ClosedTypes.ABCD;
                 ABCDType = EnumOfABCD.SINGLE;
-                questionType = QuestionType.CLOSED;
+                questionType = QuestionType.DATE;
+                i++;
+                return true;
+            case 4:
+            case 9:
+                question = "What is the capital of Poland?";
+                correctAnswer = "Warsaw";
+                closedType = ClosedTypes.NONE;
+                ABCDType = EnumOfABCD.NONE;
+                questionType = QuestionType.OPEN;
                 i++;
                 return true;
             default:
                 return false;
+
         }
+
 
     }
 
