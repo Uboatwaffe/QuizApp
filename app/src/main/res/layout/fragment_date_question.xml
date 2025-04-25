@@ -8,6 +8,7 @@
     tools:context=".ui.questions.DateQuestionFragment" >
 
     <EditText
+        android:id="@+id/day_input"
         android:layout_width="@dimen/small_width"
         android:layout_height="@dimen/standard_height"
         android:ems="10"
@@ -21,6 +22,7 @@
         tools:ignore="Autofill" />
 
     <EditText
+        android:id="@+id/year_input"
         android:layout_width="@dimen/small_width"
         android:layout_height="@dimen/standard_height"
         android:ems="10"

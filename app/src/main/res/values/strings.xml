@@ -96,6 +96,7 @@
     <string name="your_username">Your username</string>
     <string name="your_password">Your password</string>
     <string name="your_email">Your email</string>
+    <string name="no_questions">There are no available questions</string>
     <!-- Messages Preferences -->
 
     <!-- Sync Preferences -->

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.example.quizapp.databinding.FragmentScoreBinding;
+import com.example.quizapp.db.Data;
 
 /**
  * <p>Created on [unknown date]</p>
@@ -40,6 +41,10 @@ public class ScoreFragment extends Fragment {
     ) {
         // Inflate the layout for this fragment
         binding = FragmentScoreBinding.inflate(inflater, container, false);
+
+        // Set the score text in the TextView
+        binding.scoreText.setText(String.valueOf(Data.getScore()));
+
         return binding.getRoot();
     }
 

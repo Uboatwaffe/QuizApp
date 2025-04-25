@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentDateQuestionBinding;
+import com.example.quizapp.db.Data;
 import com.example.quizapp.db.Storage;
 import com.example.quizapp.error.exception.DataLoadingException;
 
@@ -60,7 +61,7 @@ public class DateQuestionFragment extends Fragment {
         // If this is the first question, initialize the storage
         if (first) {
             try {
-                Storage.setNew();
+                Storage.setNew(getContext());
             } catch (DataLoadingException e) {
                 // Navigate to the score fragment if no more questions are available
                 NavHostFragment.findNavController(this)
@@ -87,9 +88,16 @@ public class DateQuestionFragment extends Fragment {
 
         // Set up a click listener for the "Next" button
         binding.buttonNextDate.setOnClickListener(v -> {
-            // TODO: Check if the answer is correct and if there are more questions
+
+            // Check if the user's answer is correct
+            if(isAnswerCorrect()){
+                // Increment the score if the answer is correct
+                Data.setScore(Data.getScore() + 1);
+            }
+
             try {
-                Storage.setNew();
+                // Load the next question
+                Storage.setNew(getContext());
             } catch (DataLoadingException e) {
                 // Navigate to the score fragment if no more questions are available
                 NavHostFragment.findNavController(this)
@@ -111,6 +119,32 @@ public class DateQuestionFragment extends Fragment {
 
         // Store the correct answer
         answer = correctAns;
+    }
+
+    /**
+     * Checks if the user's answer is correct.
+     *
+     * @return true if the answer is correct, false otherwise.
+     */
+    private boolean isAnswerCorrect(){
+        try {
+            // Parse the user's input from the EditText fields
+            Integer userDay = Integer.parseInt(binding.dayInput.getText().toString());
+            Integer userMonth = Integer.parseInt(binding.monthInput.getText().toString());
+            Integer userYear = Integer.parseInt(binding.yearInput.getText().toString());
+
+            // Split the correct answer into day, month, and year
+            Integer day = Integer.parseInt(answer.split(";")[0]);
+            Integer month = Integer.parseInt(answer.split(";")[1]);
+            Integer year = Integer.parseInt(answer.split(";")[2]);
+
+            // Check if the user's answer matches the correct answer
+            return userDay.equals(day) && userMonth.equals(month) && userYear.equals(year);
+        }catch (NumberFormatException ignore){
+            // Handle the case where the input is not a valid number
+            return false;
+        }
+
     }
 
     /**

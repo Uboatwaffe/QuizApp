@@ -1,5 +1,7 @@
 package com.example.quizapp.db;
 
+import android.content.Context;
+import com.example.quizapp.R;
 import com.example.quizapp.error.exception.DataLoadingException;
 import com.example.quizapp.ui.questions.ClosedTypes;
 import com.example.quizapp.ui.questions.EnumOfABCD;
@@ -13,7 +15,6 @@ import com.example.quizapp.ui.questions.QuestionType;
  * <p>
  * This class contains static fields and methods for managing the current question state.
  *
- * @author Maciej
  * @version 0.1
  */
 public class Storage {
@@ -33,9 +34,10 @@ public class Storage {
      * Updates the static fields with new question data from the Data class.
      * If no more questions are available, a DataLoadingException is thrown.
      *
+     * @param context The context used to retrieve string resources.
      * @throws DataLoadingException if there are no more questions to load.
      */
-    public static void setNew() {
+    public static void setNew(Context context) {
         if (Data.update()) {
             // Update the static fields with the new question data
             Storage.question = Data.getQuestion();
@@ -49,7 +51,7 @@ public class Storage {
             Storage.ABCDType = Data.getABCDType();
         } else {
             // Throw an exception if no more questions are available
-            throw new DataLoadingException("No more questions");
+            throw new DataLoadingException(context.getString(R.string.no_questions));
         }
     }
 }

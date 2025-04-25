@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentOpenQuestionBinding;
+import com.example.quizapp.db.Data;
 import com.example.quizapp.db.Storage;
 import com.example.quizapp.error.exception.DataLoadingException;
 
@@ -60,7 +61,7 @@ public class OpenQuestionFragment extends Fragment {
         // If this is the first question, initialize the storage
         if (first) {
             try {
-                Storage.setNew();
+                Storage.setNew(getContext());
             } catch (DataLoadingException e) {
                 // Navigate to the score fragment if no more questions are available
                 NavHostFragment.findNavController(this)
@@ -87,9 +88,15 @@ public class OpenQuestionFragment extends Fragment {
 
         // Set up a click listener for the "Next" button
         binding.buttonNext.setOnClickListener(v -> {
-            // TODO: Check if the answer is correct and if there are more questions
+
+            // Check if the user's answer is correct
+            if(isAnswerCorrect()){
+                Data.setScore(Data.getScore() + 1);
+            }
+
             try {
-                Storage.setNew();
+                // Load the next question
+                Storage.setNew(getContext());
             } catch (DataLoadingException e) {
                 // Navigate to the score fragment if no more questions are available
                 NavHostFragment.findNavController(this)
@@ -112,6 +119,16 @@ public class OpenQuestionFragment extends Fragment {
             NavHostFragment.findNavController(this)
                     .navigate(R.id.dateQuestionFragment);
         }
+    }
+
+    /**
+     * Checks if the user's answer is correct.
+     *
+     * @return true if the answer is correct, false otherwise.
+     */
+    private boolean isAnswerCorrect() {
+        // Check if the user's answer matches the correct answer
+        return binding.answerInput.getText().toString().equalsIgnoreCase(answer);
     }
 
     /**

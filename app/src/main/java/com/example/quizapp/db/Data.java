@@ -27,6 +27,7 @@ public class Data {
     private static ClosedTypes closedType = ClosedTypes.NONE; // The type of closed question
     private static EnumOfABCD ABCDType = EnumOfABCD.NONE; // The type of ABCD question
     private static QuestionType questionType = QuestionType.NONE; // The type of the question (e.g., open, closed)
+    private static Integer score = 0; // The score for the quiz
 
     /**
      * A static list of question IDs.
@@ -61,9 +62,8 @@ public class Data {
      */
     public static boolean update() {
         switch (i) {
-            case 4:
-            case 9:
-                question = "Single choice";
+            case 0:
+                question = "Whats the capital of France?";
                 optionA = "Berlin";
                 optionB = "Madrid";
                 optionC = "Paris";
@@ -75,46 +75,34 @@ public class Data {
                 i++;
                 return true;
             case 1:
-            case 6:
-                question = "Multiple choice";
+                question = "Whats the capital of Germany?";
                 optionA = "Berlin";
                 optionB = "Madrid";
                 optionC = "Paris";
                 optionD = "Rome";
-                correctAnswer = "Berlin";
+                correctAnswer = "Berlin;Rome";
                 closedType = ClosedTypes.ABCD;
                 ABCDType = EnumOfABCD.MULTIPLE;
                 questionType = QuestionType.CLOSED;
                 i++;
                 return true;
             case 2:
-            case 7:
-                question = "True/False";
-                optionA = "Berlin";
-                optionB = "Madrid";
-                optionC = "Paris";
-                optionD = "Rome";
-                correctAnswer = "Madrid";
+                question = "Germany is in Europe?";
+                correctAnswer = "true";
                 closedType = ClosedTypes.TRUE_FALSE;
                 ABCDType = EnumOfABCD.SINGLE;
                 questionType = QuestionType.CLOSED;
                 i++;
                 return true;
             case 3:
-            case 8:
-                question = "Date";
-                optionA = "Berlin";
-                optionB = "Madrid";
-                optionC = "Paris";
-                optionD = "Rome";
-                correctAnswer = "Rome";
+                question = "When is the independence day of Poland?";
+                correctAnswer = "11;11;1918";
                 closedType = ClosedTypes.ABCD;
                 ABCDType = EnumOfABCD.SINGLE;
                 questionType = QuestionType.DATE;
                 i++;
                 return true;
-            case 0:
-            case 5:
+            case 4:
                 question = "What is the capital of Poland?";
                 correctAnswer = "Warsaw";
                 closedType = ClosedTypes.NONE;
@@ -125,6 +113,24 @@ public class Data {
             default:
                 return false;
         }
+    }
+
+    /**
+     * Retrieves the current score.
+     *
+     * @return the current score.
+     */
+    public static Integer getScore() {
+        return score;
+    }
+
+    /**
+     * Sets the score to a new value.
+     *
+     * @param score the new score to set.
+     */
+    public static void setScore(Integer score) {
+        Data.score = score;
     }
 
     /**

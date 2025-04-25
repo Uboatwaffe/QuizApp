@@ -90,4 +90,5 @@
     <string name="your_username">Twoja nazwa</string>
     <string name="your_password">Twoje hasło</string>
     <string name="your_email">Twój email</string>
+    <string name="no_questions">Nie ma już żadnych pytań</string>
 </resources>

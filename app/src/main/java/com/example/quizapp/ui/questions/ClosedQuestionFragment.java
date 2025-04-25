@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentClosedQuestionBinding;
+import com.example.quizapp.db.Data;
 import com.example.quizapp.db.Storage;
 import com.example.quizapp.error.exception.DataLoadingException;
 
@@ -79,12 +80,15 @@ public class ClosedQuestionFragment extends Fragment {
 
         // If this is the first question, initialize the storage
         if (first) {
+
             try {
-                Storage.setNew();
+                Storage.setNew(getContext());
             } catch (DataLoadingException e) {
                 // Navigate to the score fragment if no more questions are available
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.scoreFragment);
+            }finally{
+                Data.setScore(0);
             }
         }
 
@@ -163,12 +167,21 @@ public class ClosedQuestionFragment extends Fragment {
 
         // Set up listener for the "Next Question" button
         binding.buttonNextQuestion.setOnClickListener(v -> {
+
+            // Check whether user selected correct answer
+            if(isCorrectAnswer()) {
+                Data.setScore(Data.getScore() + 1);
+            }
+
+            // Check if there are more questions available
             try {
-                Storage.setNew();
+                // Load the next question
+                Storage.setNew(getContext());
             } catch (DataLoadingException e) {
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.scoreFragment);
             }
+
             NextQuestion();
         });
     }
@@ -207,6 +220,50 @@ public class ClosedQuestionFragment extends Fragment {
                 }
             }
         }
+    }
+
+    /**
+     * Checks if the selected answer is correct.
+     * For single choice questions, checks if the selected checkbox matches the correct answer.
+     * For multiple choice questions, checks if all selected checkboxes match the correct answers.
+     *
+     * @return true if the selected answer is correct, false otherwise.
+     */
+    private boolean isCorrectAnswer() {
+
+        if (ABCD_type == EnumOfABCD.SINGLE || question_type == ClosedTypes.TRUE_FALSE) {
+
+            // Check if the selected checkbox matches the correct answer
+            for (CheckBox checkBox : checkBoxes) {
+                if (checkBox.isChecked() && checkBox.getText().toString().equalsIgnoreCase(answer)) {
+                    return true;
+                }
+            }
+
+
+        }else if(ABCD_type == EnumOfABCD.MULTIPLE) {
+
+            // Check if all selected checkboxes match the correct answers
+            String[] correctAnswers = answer.split(";");
+
+            for (String correctAnswer : correctAnswers) {
+
+                boolean found = false;
+
+                for (CheckBox checkBox : checkBoxes) {
+                    if (checkBox.isChecked() && checkBox.getText().equals(correctAnswer)) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        // If no checkboxes are checked or the answer is incorrect
+        return false;
     }
 
     /**
