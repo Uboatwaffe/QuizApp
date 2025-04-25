@@ -49,6 +49,10 @@ public class Data {
             "Default set 2"
     );
 
+    public static void resetI() {
+        Data.i = 0;
+    }
+
     /**
      * A counter used for cycling through predefined questions.
      * This is a placeholder and should be replaced with a proper implementation.

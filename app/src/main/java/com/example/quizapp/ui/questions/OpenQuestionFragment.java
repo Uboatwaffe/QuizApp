@@ -110,6 +110,8 @@ public class OpenQuestionFragment extends Fragment {
      * Loads the next question from the database and updates the UI.
      */
     private void NextQuestion() {
+        binding.answerInput.setText(""); // Clear the answer input field
+
         if (Storage.questionType == QuestionType.CLOSED) {
             NavHostFragment.findNavController(this)
                     .navigate(R.id.closedQuestionFragment);

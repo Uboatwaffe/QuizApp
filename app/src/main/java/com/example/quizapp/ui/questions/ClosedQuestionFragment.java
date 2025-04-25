@@ -80,6 +80,7 @@ public class ClosedQuestionFragment extends Fragment {
 
         // If this is the first question, initialize the storage
         if (first) {
+            Data.resetI();
 
             try {
                 Storage.setNew(getContext());

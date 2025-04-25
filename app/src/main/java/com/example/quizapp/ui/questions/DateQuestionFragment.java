@@ -151,6 +151,11 @@ public class DateQuestionFragment extends Fragment {
      * Loads the next question from the database and updates the UI.
      */
     private void NextQuestion() {
+        binding.dayInput.setText("");
+        binding.monthInput.setText("");
+        binding.yearInput.setText("");
+
+
         if (Storage.questionType == QuestionType.CLOSED) {
             NavHostFragment.findNavController(this)
                     .navigate(R.id.closedQuestionFragment);
