@@ -61,8 +61,8 @@ public class Data {
      */
     public static boolean update() {
         switch (i) {
-            case 0:
-            case 5:
+            case 4:
+            case 9:
                 question = "Single choice";
                 optionA = "Berlin";
                 optionB = "Madrid";
@@ -113,8 +113,8 @@ public class Data {
                 questionType = QuestionType.DATE;
                 i++;
                 return true;
-            case 4:
-            case 9:
+            case 0:
+            case 5:
                 question = "What is the capital of Poland?";
                 correctAnswer = "Warsaw";
                 closedType = ClosedTypes.NONE;

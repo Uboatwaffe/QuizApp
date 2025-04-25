@@ -119,7 +119,7 @@ public class DateQuestionFragment extends Fragment {
     private void NextQuestion() {
         if (Storage.questionType == QuestionType.CLOSED) {
             NavHostFragment.findNavController(this)
-                    .navigate(R.id.dateQuestionFragment);
+                    .navigate(R.id.closedQuestionFragment);
         } else if (Storage.questionType == QuestionType.OPEN) {
             NavHostFragment.findNavController(this)
                     .navigate(R.id.openQuestionFragment);
