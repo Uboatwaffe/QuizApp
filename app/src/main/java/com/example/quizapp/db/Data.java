@@ -112,6 +112,16 @@ public class Data {
         return true;
     }
 
+    public static void initializeDefaultData(Context context) {
+        String data = "Whats the capital of France?,Berlin,Madrid,Paris,Rome,Paris,ABCD,SINGLE,CLOSED;" +
+                "Whats the capital of Germany?,Berlin,Madrid,Paris,Rome,Berlin;Rome,ABCD,MULTIPLE,CLOSED;" +
+                "Germany is in Europe?,true,false,true,ABCD,SINGLE,CLOSED;" +
+                "When is the independence day of Poland?,11,11,1918,ABCD,SINGLE,DATE;" +
+                "What is the capital of Poland?,Warsaw,Warsaw,NONE,NONE,NONE,OPEN;";
+
+        setData(data, "questions", context);
+    }
+
     /**
      * Updates the static fields with predefined question data based on the current counter value.
      *

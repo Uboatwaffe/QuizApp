@@ -50,8 +50,10 @@ public class DataTestFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentDataTestBinding.inflate(inflater, container, false);
 
+        Data.clearData("questions", getContext());
+        Data.initializeDefaultData(getContext());
 
-        binding.dataTestText.setText(Data.getData("tables", getContext()));
+        binding.dataTestText.setText(Data.getData("questions", getContext()));
         return binding.getRoot();
     }
 
