@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>Created on 23.03.2025</p>
@@ -53,6 +54,12 @@ public class Data {
             "Default set 2"
     );
 
+    private static final Map<String, String> map = Map.of(
+            "user", Setup.fileNameUsers,
+            "tables", Setup.fileNameTables,
+            "questions", Setup.fileNameQuestions
+    );
+
     public static void resetI() {
         Data.i = 0;
     }
@@ -63,19 +70,26 @@ public class Data {
      */
     private static int i = 0;
 
-    public static boolean setData(String data, Context context){
-        try (FileOutputStream fos = context.openFileOutput(Setup.fileName, Context.MODE_PRIVATE)) {
-            fos.write(data.getBytes());
+    public static boolean setData(String data, String type, Context context){
+        String oldData = getData(type, context);
+
+        try (FileOutputStream fos = context.openFileOutput(map.get(type), Context.MODE_PRIVATE)) {
+            String fullData = oldData + data;
+
+            fos.write(fullData.getBytes());
         } catch (IOException e) {
+            return false;
+        } catch (NullPointerException ignore) {
+            // Handle the case where the file name is not found in the map
             return false;
         }
         return true;
     }
 
-    public static String getData(Context context) {
+    public static String getData(String type, Context context) {
         StringBuilder data = new StringBuilder();
 
-        try (FileInputStream fis = context.openFileInput(Setup.fileName)) {
+        try (FileInputStream fis = context.openFileInput(map.get(type))) {
             int c;
             while ((c = fis.read()) != -1) {
                 data.append((char) c);
@@ -84,6 +98,18 @@ public class Data {
             return null;
         }
         return data.toString();
+    }
+
+    public static boolean clearData(String type, Context context) {
+        try (FileOutputStream fos = context.openFileOutput(map.get(type), Context.MODE_PRIVATE)) {
+            fos.write("".getBytes());
+        } catch (IOException e) {
+            return false;
+        } catch (NullPointerException ignore) {
+            // Handle the case where the file name is not found in the map
+            return false;
+        }
+        return true;
     }
 
     /**

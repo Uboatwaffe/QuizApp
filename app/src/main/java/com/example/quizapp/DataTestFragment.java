@@ -51,7 +51,7 @@ public class DataTestFragment extends Fragment {
         binding = FragmentDataTestBinding.inflate(inflater, container, false);
 
 
-        binding.dataTestText.setText(Data.getData(getContext()));
+        binding.dataTestText.setText(Data.getData("tables", getContext()));
         return binding.getRoot();
     }
 
@@ -68,7 +68,7 @@ public class DataTestFragment extends Fragment {
         binding.buttonSaveDataTest.setOnClickListener(v ->{
 
             // Save the data to a file
-            if(Data.setData(binding.dataTestText.getText().toString(), getContext())) {
+            if(Data.setData(binding.dataTestText.getText().toString(), "tables", getContext())) {
                 Toast.makeText(getContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getContext(), "Failed to save data", Toast.LENGTH_SHORT).show();

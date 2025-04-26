@@ -8,5 +8,7 @@ package com.example.quizapp.db;
  */
 public class Setup {
 
-    public static String fileName = "quizapp"; // The name of the file where quiz data is stored
+    public static String fileNameUsers = "users"; // The name of the file where quiz data is stored
+    public static String fileNameTables = "tables"; // The name of the file where quiz data is stored
+    public static String fileNameQuestions = "questions"; // The name of the file where quiz data is stored
 }
