@@ -1,9 +1,13 @@
 package com.example.quizapp.db;
 
+import android.content.Context;
 import com.example.quizapp.ui.questions.ClosedTypes;
 import com.example.quizapp.ui.questions.EnumOfABCD;
 import com.example.quizapp.ui.questions.QuestionType;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -58,6 +62,29 @@ public class Data {
      * This is a placeholder and should be replaced with a proper implementation.
      */
     private static int i = 0;
+
+    public static boolean setData(String data, Context context){
+        try (FileOutputStream fos = context.openFileOutput(Setup.fileName, Context.MODE_PRIVATE)) {
+            fos.write(data.getBytes());
+        } catch (IOException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static String getData(Context context) {
+        StringBuilder data = new StringBuilder();
+
+        try (FileInputStream fis = context.openFileInput(Setup.fileName)) {
+            int c;
+            while ((c = fis.read()) != -1) {
+                data.append((char) c);
+            }
+        } catch (IOException e) {
+            return null;
+        }
+        return data.toString();
+    }
 
     /**
      * Updates the static fields with predefined question data based on the current counter value.

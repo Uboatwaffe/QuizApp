@@ -178,4 +178,9 @@
         android:name="com.example.quizapp.ui.logged_in.ScoreFragment"
         android:label="fragment_score"
         tools:layout="@layout/fragment_score" />
+    <fragment
+        android:id="@+id/dataTestFragment"
+        android:name="com.example.quizapp.DataTestFragment"
+        android:label="fragment_data_test"
+        tools:layout="@layout/fragment_data_test" />
 </navigation>

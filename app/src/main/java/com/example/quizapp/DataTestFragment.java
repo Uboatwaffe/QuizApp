@@ -1,26 +1,38 @@
-package com.example.quizapp.debug;
+package com.example.quizapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
-import com.example.quizapp.databinding.FragmentDebugBinding;
+import com.example.quizapp.databinding.FragmentCreditsBinding;
+import com.example.quizapp.databinding.FragmentDataTestBinding;
+import com.example.quizapp.db.Data;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
- * This fragment is used to test fragments that are not accessible during normal app usage.
- * It provides navigation to various fragments for debugging purposes.
+ * <p>Created on [unknown date]</p>
+ * The DataTestFragment class is responsible for testing the data of the application.
+ * <p>
+ * This fragment uses view binding to access its layout elements and handles user interactions
+ * through button click listeners.
+ *
+ * @version 1.0
  */
-public class DebugFragment extends Fragment {
+public class DataTestFragment extends Fragment {
 
     /**
      * The binding object for the fragment.
      * Used to access the views defined in the layout file.
      */
-    private FragmentDebugBinding binding;
+    private FragmentDataTestBinding binding;
 
     /**
      * Called to create the view hierarchy associated with the fragment.
@@ -35,50 +47,35 @@ public class DebugFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        // Inflate the layout for this fragment and initialize the binding object
-        binding = FragmentDebugBinding.inflate(inflater, container, false);
+        // Inflate the layout for this fragment
+        binding = FragmentDataTestBinding.inflate(inflater, container, false);
+
+
+        binding.dataTestText.setText(Data.getData(getContext()));
         return binding.getRoot();
     }
 
     /**
      * Called immediately after the view is created.
-     * Sets up click listeners for the buttons to navigate to different fragments.
      *
      * @param view               The view returned by onCreateView.
      * @param savedInstanceState A Bundle containing the saved state of the fragment, or null if no state is saved.
      */
+    @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Set up navigation to the ProblemFragment
-        binding.buttonProblem.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.problemFragment)
-        );
+        binding.buttonSaveDataTest.setOnClickListener(v ->{
 
-        // Set up navigation to the ClosedQuestionFragment
-        binding.buttonAbcd.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.closedQuestionFragment)
-        );
+            // Save the data to a file
+            if(Data.setData(binding.dataTestText.getText().toString(), getContext())) {
+                Toast.makeText(getContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext(), "Failed to save data", Toast.LENGTH_SHORT).show();
+            }
 
-        // Set up navigation to the DateQuestionFragment
-        binding.buttonDate.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.dateQuestionFragment)
-        );
+        });
 
-        // Set up navigation to the OpenQuestionFragment
-        binding.buttonOpen.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.openQuestionFragment)
-        );
-
-        // Set up navigation to the DataTestFragment
-        binding.buttonDataTest.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.dataTestFragment)
-        );
     }
 
     /**
