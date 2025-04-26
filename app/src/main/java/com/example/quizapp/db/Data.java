@@ -70,6 +70,15 @@ public class Data {
      */
     private static int i = 0;
 
+    /**
+     * A static method to set data in a file.
+     * This method appends the provided data to the existing data in the file.
+     *
+     * @param data   The data to be saved.
+     * @param type   The type of data (e.g., "user", "tables", "questions").
+     * @param context The context of the application.
+     * @return true if the data was successfully saved, false otherwise.
+     */
     public static boolean setData(String data, String type, Context context){
         String oldData = getData(type, context);
 
@@ -86,6 +95,14 @@ public class Data {
         return true;
     }
 
+    /**
+     * A static method to get data from a file.
+     * This method reads the data from the specified file and returns it as a string.
+     *
+     * @param type   The type of data (e.g., "user", "tables", "questions").
+     * @param context The context of the application.
+     * @return The data read from the file, or null if an error occurred.
+     */
     public static String getData(String type, Context context) {
         StringBuilder data = new StringBuilder();
 
@@ -100,18 +117,28 @@ public class Data {
         return data.toString();
     }
 
-    public static boolean clearData(String type, Context context) {
+    /**
+     * A static method to clear data in a file.
+     * This method overwrites the existing data in the specified file with an empty string.
+     *
+     * @param type    The type of data (e.g., "user", "tables", "questions").
+     * @param context The context of the application.
+     */
+    public static void clearData(String type, Context context) {
         try (FileOutputStream fos = context.openFileOutput(map.get(type), Context.MODE_PRIVATE)) {
             fos.write("".getBytes());
-        } catch (IOException e) {
-            return false;
+        } catch (IOException ignored) {
         } catch (NullPointerException ignore) {
             // Handle the case where the file name is not found in the map
-            return false;
         }
-        return true;
     }
 
+    /**
+     * A static method to initialize default data in the questions file.
+     * This method writes predefined question data to the specified file.
+     *
+     * @param context The context of the application.
+     */
     public static void initializeDefaultData(Context context) {
         String data = "Whats the capital of France?,Berlin,Madrid,Paris,Rome,Paris,ABCD,SINGLE,CLOSED;" +
                 "Whats the capital of Germany?,Berlin,Madrid,Paris,Rome,Berlin;Rome,ABCD,MULTIPLE,CLOSED;" +
