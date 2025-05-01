@@ -1,10 +1,15 @@
 package com.example.quizapp.db;
 
+import android.content.Context;
 import com.example.quizapp.ui.questions.ClosedTypes;
 import com.example.quizapp.ui.questions.EnumOfABCD;
 import com.example.quizapp.ui.questions.QuestionType;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>Created on 23.03.2025</p>
@@ -49,6 +54,7 @@ public class Data {
             "Default set 2"
     );
 
+
     public static void resetI() {
         Data.i = 0;
     }
@@ -58,6 +64,85 @@ public class Data {
      * This is a placeholder and should be replaced with a proper implementation.
      */
     private static int i = 0;
+
+    /**
+     * A static method to set data in a file.
+     * This method appends the provided data to the existing data in the file.
+     *
+     * @param data   The data to be saved.
+     * @param dataTables   The type of data (e.g., "user", "tables", "questions").
+     * @param context The context of the application.
+     * @return true if the data was successfully saved, false otherwise.
+     */
+    public static boolean setData(String data, DataTables dataTables, Context context){
+        String oldData = getData(dataTables , context);
+
+        try (FileOutputStream fos = context.openFileOutput(dataTables.getTableName(), Context.MODE_PRIVATE)) {
+            String fullData = oldData + data;
+
+            fos.write(fullData.getBytes());
+        } catch (IOException e) {
+            return false;
+        } catch (NullPointerException ignore) {
+            // Handle the case where the file name is not found in the map
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * A static method to get data from a file.
+     * This method reads the data from the specified file and returns it as a string.
+     *
+     * @param dataTables   The type of data (e.g., "user", "tables", "questions").
+     * @param context The context of the application.
+     * @return The data read from the file, or null if an error occurred.
+     */
+    public static String getData(DataTables dataTables, Context context) {
+        StringBuilder data = new StringBuilder();
+
+        try (FileInputStream fis = context.openFileInput(dataTables.getTableName())) {
+            int c;
+            while ((c = fis.read()) != -1) {
+                data.append((char) c);
+            }
+        } catch (IOException e) {
+            return null;
+        }
+        return data.toString();
+    }
+
+    /**
+     * A static method to clear data in a file.
+     * This method overwrites the existing data in the specified file with an empty string.
+     *
+     * @param dataTables    The type of data (e.g., "user", "tables", "questions").
+     * @param context The context of the application.
+     */
+    public static void clearData(DataTables dataTables, Context context) {
+        try (FileOutputStream fos = context.openFileOutput(dataTables.getTableName(), Context.MODE_PRIVATE)) {
+            fos.write("".getBytes());
+        } catch (IOException ignored) {
+        } catch (NullPointerException ignore) {
+            // Handle the case where the file name is not found in the map
+        }
+    }
+
+    /**
+     * A static method to initialize default data in the questions file.
+     * This method writes predefined question data to the specified file.
+     *
+     * @param context The context of the application.
+     */
+    public static void initializeDefaultData(Context context) {
+        String data = "Whats the capital of France?,Berlin,Madrid,Paris,Rome,Paris,ABCD,SINGLE,CLOSED;" +
+                "Whats the capital of Germany?,Berlin,Madrid,Paris,Rome,Berlin;Rome,ABCD,MULTIPLE,CLOSED;" +
+                "Germany is in Europe?,true,false,true,ABCD,SINGLE,CLOSED;" +
+                "When is the independence day of Poland?,11,11,1918,ABCD,SINGLE,DATE;" +
+                "What is the capital of Poland?,Warsaw,Warsaw,NONE,NONE,NONE,OPEN;";
+
+        setData(data, DataTables.QUESTIONS, context);
+    }
 
     /**
      * Updates the static fields with predefined question data based on the current counter value.

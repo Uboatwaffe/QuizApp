@@ -73,6 +73,7 @@ public class DebugFragment extends Fragment {
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.openQuestionFragment)
         );
+
     }
 
     /**
