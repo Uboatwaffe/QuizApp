@@ -74,11 +74,6 @@ public class DebugFragment extends Fragment {
                         .navigate(R.id.openQuestionFragment)
         );
 
-        // Set up navigation to the DataTestFragment
-        binding.buttonDataTest.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.dataTestFragment)
-        );
     }
 
     /**
