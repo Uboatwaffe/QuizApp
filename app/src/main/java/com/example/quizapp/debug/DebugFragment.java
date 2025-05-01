@@ -75,9 +75,7 @@ public class DebugFragment extends Fragment {
                         .navigate(R.id.openQuestionFragment)
         );
 
-        binding.buttonReset.setOnClickListener(v ->{
-            Data.initializeDefaultData(getContext());
-        });
+        binding.buttonReset.setOnClickListener(v -> Data.initializeDefaultData(getContext()));
 
     }
 

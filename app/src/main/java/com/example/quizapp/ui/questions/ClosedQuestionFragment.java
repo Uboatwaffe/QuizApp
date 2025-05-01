@@ -48,7 +48,7 @@ public class ClosedQuestionFragment extends Fragment {
 
     /**
      * The correct answer to the current question.
-     * @noinspection FieldCanBeLocal, unused
+     * @noinspection unused
      */
     private String answer;
 

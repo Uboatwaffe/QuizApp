@@ -1,0 +1,1 @@
+add buttons to be able to return from every fragment (1.05.2025)

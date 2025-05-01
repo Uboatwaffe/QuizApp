@@ -68,11 +68,6 @@ public class LoginFragment extends Fragment {
 
         // Set up a click listener for the "Login" button
         binding.buttonLoginLogin.setOnClickListener(v -> {
-            // TODO: implement user authentication
-
-            // Retrieve the username and password from the input fields
-            String username = binding.usernameInput.getText().toString();
-            String password = binding.passwordInput.getText().toString();
 
             // Check if the user provided correct credentials (default: admin, admin)
             if (UserAuthentication.authenticateUser(
