@@ -13,6 +13,7 @@ import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentCreditsBinding;
 import com.example.quizapp.databinding.FragmentDataTestBinding;
 import com.example.quizapp.db.Data;
+import com.example.quizapp.db.DataTables;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -50,10 +51,10 @@ public class DataTestFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentDataTestBinding.inflate(inflater, container, false);
 
-        Data.clearData("questions", getContext());
+        Data.clearData(DataTables.QUESTIONS, getContext());
         Data.initializeDefaultData(getContext());
 
-        binding.dataTestText.setText(Data.getData("questions", getContext()));
+        binding.dataTestText.setText(Data.getData(DataTables.TABLES, getContext()));
         return binding.getRoot();
     }
 
@@ -70,7 +71,7 @@ public class DataTestFragment extends Fragment {
         binding.buttonSaveDataTest.setOnClickListener(v ->{
 
             // Save the data to a file
-            if(Data.setData(binding.dataTestText.getText().toString(), "tables", getContext())) {
+            if(Data.setData(binding.dataTestText.getText().toString(), DataTables.TABLES, getContext())) {
                 Toast.makeText(getContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getContext(), "Failed to save data", Toast.LENGTH_SHORT).show();

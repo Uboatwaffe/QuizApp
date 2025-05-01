@@ -54,11 +54,6 @@ public class Data {
             "Default set 2"
     );
 
-    private static final Map<String, String> map = Map.of(
-            "user", Setup.fileNameUsers,
-            "tables", Setup.fileNameTables,
-            "questions", Setup.fileNameQuestions
-    );
 
     public static void resetI() {
         Data.i = 0;
@@ -75,14 +70,14 @@ public class Data {
      * This method appends the provided data to the existing data in the file.
      *
      * @param data   The data to be saved.
-     * @param type   The type of data (e.g., "user", "tables", "questions").
+     * @param dataTables   The type of data (e.g., "user", "tables", "questions").
      * @param context The context of the application.
      * @return true if the data was successfully saved, false otherwise.
      */
-    public static boolean setData(String data, String type, Context context){
-        String oldData = getData(type, context);
+    public static boolean setData(String data, DataTables dataTables, Context context){
+        String oldData = getData(dataTables , context);
 
-        try (FileOutputStream fos = context.openFileOutput(map.get(type), Context.MODE_PRIVATE)) {
+        try (FileOutputStream fos = context.openFileOutput(dataTables.getTableName(), Context.MODE_PRIVATE)) {
             String fullData = oldData + data;
 
             fos.write(fullData.getBytes());
@@ -99,14 +94,14 @@ public class Data {
      * A static method to get data from a file.
      * This method reads the data from the specified file and returns it as a string.
      *
-     * @param type   The type of data (e.g., "user", "tables", "questions").
+     * @param dataTables   The type of data (e.g., "user", "tables", "questions").
      * @param context The context of the application.
      * @return The data read from the file, or null if an error occurred.
      */
-    public static String getData(String type, Context context) {
+    public static String getData(DataTables dataTables, Context context) {
         StringBuilder data = new StringBuilder();
 
-        try (FileInputStream fis = context.openFileInput(map.get(type))) {
+        try (FileInputStream fis = context.openFileInput(dataTables.getTableName())) {
             int c;
             while ((c = fis.read()) != -1) {
                 data.append((char) c);
@@ -121,11 +116,11 @@ public class Data {
      * A static method to clear data in a file.
      * This method overwrites the existing data in the specified file with an empty string.
      *
-     * @param type    The type of data (e.g., "user", "tables", "questions").
+     * @param dataTables    The type of data (e.g., "user", "tables", "questions").
      * @param context The context of the application.
      */
-    public static void clearData(String type, Context context) {
-        try (FileOutputStream fos = context.openFileOutput(map.get(type), Context.MODE_PRIVATE)) {
+    public static void clearData(DataTables dataTables, Context context) {
+        try (FileOutputStream fos = context.openFileOutput(dataTables.getTableName(), Context.MODE_PRIVATE)) {
             fos.write("".getBytes());
         } catch (IOException ignored) {
         } catch (NullPointerException ignore) {
@@ -146,7 +141,7 @@ public class Data {
                 "When is the independence day of Poland?,11,11,1918,ABCD,SINGLE,DATE;" +
                 "What is the capital of Poland?,Warsaw,Warsaw,NONE,NONE,NONE,OPEN;";
 
-        setData(data, "questions", context);
+        setData(data, DataTables.QUESTIONS, context);
     }
 
     /**
