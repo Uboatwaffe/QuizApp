@@ -58,7 +58,11 @@
         android:id="@+id/signUpFragment"
         android:name="com.example.quizapp.ui.SignUpFragment"
         android:label="@string/sign_up_label"
-        tools:layout="@layout/fragment_sign_up" />
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/problemFragment"
         android:name="com.example.quizapp.error.ProblemFragment"

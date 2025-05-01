@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentSignUpBinding;
+import com.example.quizapp.db.user_management.ManageUsers;
 
 /**
  * <p>Created on [unknown date]</p>
@@ -40,6 +43,9 @@ public class SignUpFragment extends Fragment {
     ) {
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(inflater, container, false);
+
+        binding.textViewError.setVisibility(View.GONE);
+
         return binding.getRoot();
     }
 
@@ -54,7 +60,30 @@ public class SignUpFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // TODO: Add listeners for sign-up interactions
+        binding.buttonSignUp.setOnClickListener(v ->{
+            // Handle sign-up button click
+            String username = binding.usernameFirst.getText().toString();
+            String password = binding.passwordFirst.getText().toString();
+            String confirmPassword = binding.passwordSecond.getText().toString();
+
+            if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                // Show error message for empty fields
+                binding.textViewError.setText(R.string.fill_in_all_fields);
+                binding.textViewError.setVisibility(View.VISIBLE);
+            } else if (!password.equals(confirmPassword)) {
+                // Show error message for password mismatch
+                binding.textViewError.setText(R.string.passwords_not_matching);
+                binding.textViewError.setVisibility(View.VISIBLE);
+            } else if (!binding.checkBoxAgreement.isChecked()) {
+                binding.textViewError.setText(R.string.check_all_checkboxes);
+                binding.textViewError.setVisibility(View.VISIBLE);
+            } else {
+                if (ManageUsers.addUser(username, password, getContext())){
+                    NavHostFragment.findNavController(this)
+                            .navigate(R.id.action_signUpFragment_to_loginFragment);
+                }
+            }
+        });
     }
 
     /**

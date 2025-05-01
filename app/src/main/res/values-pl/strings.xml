@@ -92,4 +92,7 @@
     <string name="your_email">Twój email</string>
     <string name="no_questions">Nie ma już żadnych pytań</string>
     <string name="hello_text">Cześć</string>
+    <string name="fill_in_all_fields">Proszę uzupełnić wszystkie pola</string>
+    <string name="passwords_not_matching">Hasła nie są takie same</string>
+    <string name="check_all_checkboxes">Proszę zaznaczyć wszystkie wymagane pola</string>
 </resources>
