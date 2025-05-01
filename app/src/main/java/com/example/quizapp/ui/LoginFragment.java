@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentLoginBinding;
+import com.example.quizapp.db.user_management.UserAuthentication;
 
 /**
  * <p>Created on [unknown date]</p>
@@ -74,7 +75,11 @@ public class LoginFragment extends Fragment {
             String password = binding.passwordInput.getText().toString();
 
             // Check if the user provided correct credentials (default: admin, admin)
-            if (authentication(username, password)) {
+            if (UserAuthentication.authenticateUser(
+                    binding.usernameInput.getText().toString(),
+                    binding.passwordInput.getText().toString(),
+                    getContext())) {
+
                 // Navigate to the logged-in fragment
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_loginFragment_to_loggedInFragment);
@@ -100,15 +105,4 @@ public class LoginFragment extends Fragment {
         binding = null; // Clear the binding reference
     }
 
-    /**
-     * Authenticates the user based on the provided username and password.
-     *
-     * @param username The username entered by the user.
-     * @param password The password entered by the user.
-     * @return True if the credentials are valid, false otherwise.
-     */
-    boolean authentication(String username, String password) {
-        return (username.equals("admin") && password.equals("admin")) ||
-                (username.isEmpty() && password.isEmpty());
-    }
 }

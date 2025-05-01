@@ -135,6 +135,10 @@ public class Data {
      * @param context The context of the application.
      */
     public static void initializeDefaultData(Context context) {
+        clearData(DataTables.USER, context);
+        clearData(DataTables.TABLES, context);
+        clearData(DataTables.QUESTIONS, context);
+
         String data = "Whats the capital of France?,Berlin,Madrid,Paris,Rome,Paris,ABCD,SINGLE,CLOSED;" +
                 "Whats the capital of Germany?,Berlin,Madrid,Paris,Rome,Berlin;Rome,ABCD,MULTIPLE,CLOSED;" +
                 "Germany is in Europe?,true,false,true,ABCD,SINGLE,CLOSED;" +
@@ -142,6 +146,12 @@ public class Data {
                 "What is the capital of Poland?,Warsaw,Warsaw,NONE,NONE,NONE,OPEN;";
 
         setData(data, DataTables.QUESTIONS, context);
+
+        data = "admin,admin;user,password;";
+
+        setData(data, DataTables.USER, context);
+
+
     }
 
     /**

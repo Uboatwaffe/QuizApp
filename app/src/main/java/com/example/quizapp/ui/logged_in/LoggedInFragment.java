@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentLoggedInBinding;
+import com.example.quizapp.db.user_management.CurrentUserData;
 
 /**
  * <p>Created on 23.04.2025</p>
@@ -45,6 +46,11 @@ public class LoggedInFragment extends Fragment {
     ) {
         // Inflate the layout for this fragment
         binding = FragmentLoggedInBinding.inflate(inflater, container, false);
+
+        CharSequence charSequence = getResources().getText(R.string.hello_text) + ", " + CurrentUserData.getUsername() + "!";
+
+        binding.yourLoginText.setText(charSequence);
+
         return binding.getRoot();
     }
 

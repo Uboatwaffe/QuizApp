@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentDebugBinding;
+import com.example.quizapp.db.data.Data;
 
 /**
  * This fragment is used to test fragments that are not accessible during normal app usage.
@@ -73,6 +74,10 @@ public class DebugFragment extends Fragment {
                 NavHostFragment.findNavController(this)
                         .navigate(R.id.openQuestionFragment)
         );
+
+        binding.buttonReset.setOnClickListener(v ->{
+            Data.initializeDefaultData(getContext());
+        });
 
     }
 

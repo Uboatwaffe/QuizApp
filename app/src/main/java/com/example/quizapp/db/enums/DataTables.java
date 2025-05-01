@@ -13,7 +13,8 @@ public enum DataTables {
      */
     USER("user"),
     TABLES("tables"),
-    QUESTIONS("questions");
+    QUESTIONS("questions"),
+    LASTS("lasts");
 
     private final String tableName;
 
