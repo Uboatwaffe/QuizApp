@@ -1,4 +1,4 @@
-package com.example.quizapp.ui.questions;
+package com.example.quizapp.db.enums;
 
 /**
  * <p>Created on 23.03.2025</p>

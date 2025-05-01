@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentChangeSetsBinding;
-import com.example.quizapp.db.Data;
+import com.example.quizapp.db.data.Data;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -10,8 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentClosedQuestionBinding;
-import com.example.quizapp.db.Data;
-import com.example.quizapp.db.Storage;
+import com.example.quizapp.db.data.Data;
+import com.example.quizapp.db.enums.ClosedTypes;
+import com.example.quizapp.db.enums.EnumOfABCD;
+import com.example.quizapp.db.enums.QuestionType;
+import com.example.quizapp.db.questions_management.Storage;
 import com.example.quizapp.error.exception.DataLoadingException;
 
 /**

@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import com.example.quizapp.databinding.FragmentScoreBinding;
-import com.example.quizapp.db.Data;
+import com.example.quizapp.db.data.Data;
 
 /**
  * <p>Created on [unknown date]</p>

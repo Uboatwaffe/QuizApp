@@ -1,11 +1,12 @@
-package com.example.quizapp.db;
+package com.example.quizapp.db.questions_management;
 
 import android.content.Context;
 import com.example.quizapp.R;
+import com.example.quizapp.db.data.Data;
 import com.example.quizapp.error.exception.DataLoadingException;
-import com.example.quizapp.ui.questions.ClosedTypes;
-import com.example.quizapp.ui.questions.EnumOfABCD;
-import com.example.quizapp.ui.questions.QuestionType;
+import com.example.quizapp.db.enums.ClosedTypes;
+import com.example.quizapp.db.enums.EnumOfABCD;
+import com.example.quizapp.db.enums.QuestionType;
 
 /**
  * <p>Created on 25.03.2025</p>

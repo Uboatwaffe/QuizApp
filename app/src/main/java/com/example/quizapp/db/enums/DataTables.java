@@ -1,4 +1,4 @@
-package com.example.quizapp.db;
+package com.example.quizapp.db.enums;
 
 /**
  * <p>Created on 01.05.2025<\p>

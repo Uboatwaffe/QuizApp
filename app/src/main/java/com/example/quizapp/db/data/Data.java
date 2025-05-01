@@ -1,15 +1,15 @@
-package com.example.quizapp.db;
+package com.example.quizapp.db.data;
 
 import android.content.Context;
-import com.example.quizapp.ui.questions.ClosedTypes;
-import com.example.quizapp.ui.questions.EnumOfABCD;
-import com.example.quizapp.ui.questions.QuestionType;
+import com.example.quizapp.db.enums.DataTables;
+import com.example.quizapp.db.enums.ClosedTypes;
+import com.example.quizapp.db.enums.EnumOfABCD;
+import com.example.quizapp.db.enums.QuestionType;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.Map;
 
 /**
  * <p>Created on 23.03.2025</p>
