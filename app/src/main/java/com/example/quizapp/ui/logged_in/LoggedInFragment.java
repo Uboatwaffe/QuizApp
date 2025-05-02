@@ -65,10 +65,13 @@ public class LoggedInFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Set up navigation to the MainMenuFragment
-        binding.buttonLogOut.setOnClickListener(v ->
-                NavHostFragment.findNavController(this)
-                        .navigate(R.id.mainMenuFragment)
-        );
+        binding.buttonLogOut.setOnClickListener(v -> {
+            CurrentUserData.setLoggedIn(false);
+            CurrentUserData.setUsername(null);
+
+            NavHostFragment.findNavController(this)
+                    .navigate(R.id.mainMenuFragment);
+        });
 
         // Set up navigation to the ManageSetsFragment
         binding.buttonChangeSets.setOnClickListener(v ->

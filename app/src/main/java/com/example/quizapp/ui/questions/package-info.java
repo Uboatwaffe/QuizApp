@@ -14,9 +14,6 @@
  *     <li>{@link com.example.quizapp.ui.questions.ClosedQuestionFragment} - Class for handling closed questions (single/multiple choice or true/false).</li>
  *     <li>{@link com.example.quizapp.ui.questions.DateQuestionFragment} - Class for handling date-related questions.</li>
  *     <li>{@link com.example.quizapp.ui.questions.OpenQuestionFragment} - Class for handling open-ended questions.</li>
- *     <li>{@link com.example.quizapp.db.enums.ClosedTypes} - Enum for the types of closed questions (true/false or normal).</li>
- *     <li>{@link com.example.quizapp.db.enums.EnumOfABCD} - Enum for the types of ABCD questions (single or multiple choice).</li>
- *     <li>{@link com.example.quizapp.db.enums.QuestionType} - Enum for categorizing question types (closed, date-based, or open-ended).</li>
  * </ul>
  *
  * @version 0.1

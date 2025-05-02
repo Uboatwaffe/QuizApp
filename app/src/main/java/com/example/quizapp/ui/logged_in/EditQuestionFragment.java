@@ -123,6 +123,11 @@ public class EditQuestionFragment extends Fragment {
                 // Do nothing
             }
         });
+
+        binding.buttonReturnEdit.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_editQuestionFragment_to_manageQuestionsFragment)
+        );
     }
 
     /**

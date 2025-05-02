@@ -17,4 +17,13 @@ public class CurrentUserData {
     }
 
     private static String username;
+    private static boolean LoggedIn = false;
+
+    public static boolean isLoggedIn() {
+        return LoggedIn;
+    }
+
+    public static void setLoggedIn(boolean loggedIn) {
+        LoggedIn = loggedIn;
+    }
 }

@@ -78,8 +78,29 @@
         android:text="@string/to_be_done"
         android:textColor="@color/design_default_color_error"
         android:textSize="@dimen/small_text_font_size"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/buttonLoginLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordInput" />
+
+    <Button
+        android:id="@+id/button_return_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="@string/return_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignup" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="@dimen/divider_width"
+        android:layout_height="@dimen/divider_height"
+        android:background="@color/material_dynamic_neutral50"
+        app:layout_constraintBottom_toTopOf="@+id/button_return_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignup" />
 </androidx.constraintlayout.widget.ConstraintLayout>
