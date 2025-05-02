@@ -137,6 +137,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <Button
+                android:id="@+id/button_return_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_margin"
+                android:text="@string/return_text"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_save" />
+
+            <Button
+                android:id="@+id/button_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -144,7 +155,7 @@
                 android:text="@string/save_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_return_settings"
                 app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
 
             <TextView

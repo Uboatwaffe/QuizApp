@@ -129,17 +129,6 @@
         app:layout_constraintTop_toBottomOf="@+id/password_second" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/top_margin"
-        android:text="@string/to_be_done"
-        android:textColor="@color/design_default_color_error"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
-
-    <TextView
         android:id="@+id/textView_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,4 +139,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox_agreement"
         tools:visibility="gone" />
+
+    <Button
+        android:id="@+id/button_return_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin"
+        android:text="@string/return_text"
+        app:layout_constraintEnd_toEndOf="@+id/button_sign_up"
+        app:layout_constraintStart_toStartOf="@+id/button_sign_up"
+        app:layout_constraintTop_toBottomOf="@+id/button_sign_up" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentLoginBinding;
+import com.example.quizapp.db.user_management.CurrentUserData;
 import com.example.quizapp.db.user_management.UserAuthentication;
 
 /**
@@ -59,7 +60,7 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Setting the error text to invisible
-        binding.errorText.setVisibility(View.INVISIBLE);
+        binding.errorText.setVisibility(View.GONE);
 
         // Set up a click listener for the "Sign Up" button
         binding.buttonSignup.setOnClickListener(v ->
@@ -75,19 +76,26 @@ public class LoginFragment extends Fragment {
                     binding.passwordInput.getText().toString(),
                     getContext())) {
 
+                // Clear the input fields
+                binding.usernameInput.setText("");
+                binding.passwordInput.setText("");
+
+                CurrentUserData.setLoggedIn(true);
+
                 // Navigate to the logged-in fragment
                 NavHostFragment.findNavController(LoginFragment.this)
                         .navigate(R.id.action_loginFragment_to_loggedInFragment);
 
-                // Clear the input fields
-                binding.usernameInput.setText("");
-                binding.passwordInput.setText("");
             } else {
                 // Display an error message for invalid credentials
                 binding.errorText.setText(R.string.invalid_username_or_password);
                 binding.errorText.setVisibility(View.VISIBLE);
             }
         });
+
+        binding.buttonReturnLogin.setOnClickListener(v ->
+                NavHostFragment.findNavController(LoginFragment.this)
+                        .navigate(R.id.action_loginFragment_to_mainMenuFragment));
     }
 
     /**

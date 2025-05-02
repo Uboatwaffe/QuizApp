@@ -6,7 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
+import com.example.quizapp.R;
 import com.example.quizapp.databinding.FragmentSettingsBinding;
+import com.example.quizapp.db.user_management.CurrentUserData;
 
 /**
  * <p>Created on [unknown date]</p>
@@ -54,7 +57,15 @@ public class SettingsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // TODO: Add listeners for settings interactions
+        binding.buttonReturnSettings.setOnClickListener(v->{
+            if (CurrentUserData.isLoggedIn()){
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.loggedInFragment);
+            }else{
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.mainMenuFragment);
+            }
+        });
     }
 
     /**

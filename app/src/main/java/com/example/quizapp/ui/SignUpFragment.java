@@ -84,6 +84,11 @@ public class SignUpFragment extends Fragment {
                 }
             }
         });
+
+        binding.buttonReturnSignUp.setOnClickListener(v ->
+                NavHostFragment.findNavController(this)
+                        .navigate(R.id.action_signUpFragment_to_loginFragment)
+        );
     }
 
     /**
