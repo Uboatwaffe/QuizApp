@@ -12,8 +12,10 @@
  *
  * Contained classes:
  * <ul>
- *   <li>{@link com.example.quizapp.db} - package for exceptions</li>
- *   <li>{@link com.example.quizapp.db} - package for exceptions</li>
+ *   <li>{@link com.example.quizapp.db.data} - package for data reading/writing</li>
+ *   <li>{@link com.example.quizapp.db.enums} - package for all enums</li>
+ *   <li>{@link com.example.quizapp.db.questions_management} - package for managing questions</li>
+ *   <li>{@link com.example.quizapp.db.user_management} - package for managing user interactions</li>
  * </ul>
  *
  * @version 0.1
